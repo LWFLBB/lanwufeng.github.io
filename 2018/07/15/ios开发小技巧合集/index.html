@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ios开发小技巧合集 | Mr_lan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  12345678910[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForI">
+  <meta name="description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  123456789[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForIte">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios开发小技巧合集">
 <meta property="og:url" content="http://yoursite.com/2018/07/15/ios开发小技巧合集/index.html">
 <meta property="og:site_name" content="Mr_lan&#39;s Blog">
-<meta property="og:description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  12345678910[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForI">
+<meta property="og:description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  123456789[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForIte">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-15T07:07:33.471Z">
+<meta property="og:updated_time" content="2018-07-15T07:10:46.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios开发小技巧合集">
-<meta name="twitter:description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  12345678910[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForI">
+<meta name="twitter:description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  123456789[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForIte">
   
     <link rel="alternative" href="/atom.xml" title="Mr_lan&#39;s Blog" type="application/atom+xml">
   
@@ -165,7 +165,7 @@
         <h3 id="本文主要记录日常工作中积累的一些iOS小技巧"><a href="#本文主要记录日常工作中积累的一些iOS小技巧" class="headerlink" title="本文主要记录日常工作中积累的一些iOS小技巧"></a>本文主要记录日常工作中积累的一些iOS小技巧</h3><ul>
 <li>获取不到UICollectionView指定cell的问题</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[self.collectionView layoutIfNeeded];//添加这句话就好 </span><br><span class="line"></span><br><span class="line">QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_index inSection:0]];</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">- SDWebImage 加载大量高清图片时内存暴增</span><br><span class="line">  - 解决方案：关闭SD加载高清大图时的解压缩</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[self.collectionView layoutIfNeeded];//添加这句话就好 </span><br><span class="line"></span><br><span class="line">QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_index inSection:0]];</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- SDWebImage 加载大量高清图片时内存暴增</span><br><span class="line">  - 解决方案：关闭SD加载高清大图时的解压缩</span><br></pre></td></tr></table></figure>
 <p>static BOOL SDImageCacheOldShouldDecompressImages = YES; </p>
 <p>static BOOL SDImagedownloderOldShouldDecompressImages = YES; </p>
 <ul>
