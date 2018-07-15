@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ios开发小技巧合集 | Mr_lan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  123456789[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForIte">
+  <meta name="description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  12345678910[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios开发小技巧合集">
 <meta property="og:url" content="http://yoursite.com/2018/07/15/ios开发小技巧合集/index.html">
 <meta property="og:site_name" content="Mr_lan&#39;s Blog">
-<meta property="og:description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  123456789[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForIte">
+<meta property="og:description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  12345678910[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForI">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-15T07:04:54.968Z">
+<meta property="og:updated_time" content="2018-07-15T07:07:33.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios开发小技巧合集">
-<meta name="twitter:description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  123456789[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForIte">
+<meta name="twitter:description" content="本文主要记录日常工作中积累的一些iOS小技巧 获取不到UICollectionView指定cell的问题  12345678910[self.collectionView layoutIfNeeded];//添加这句话就好 QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForI">
   
     <link rel="alternative" href="/atom.xml" title="Mr_lan&#39;s Blog" type="application/atom+xml">
   
@@ -165,7 +165,7 @@
         <h3 id="本文主要记录日常工作中积累的一些iOS小技巧"><a href="#本文主要记录日常工作中积累的一些iOS小技巧" class="headerlink" title="本文主要记录日常工作中积累的一些iOS小技巧"></a>本文主要记录日常工作中积累的一些iOS小技巧</h3><ul>
 <li>获取不到UICollectionView指定cell的问题</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[self.collectionView layoutIfNeeded];//添加这句话就好 </span><br><span class="line"></span><br><span class="line">QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_index inSection:0]];</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">- SDWebImage 加载大量高清图片时内存暴增</span><br><span class="line">  - 解决方案：关闭SD加载高清大图时的解压缩</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[self.collectionView layoutIfNeeded];//添加这句话就好 </span><br><span class="line"></span><br><span class="line">QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_index inSection:0]];</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">- SDWebImage 加载大量高清图片时内存暴增</span><br><span class="line">  - 解决方案：关闭SD加载高清大图时的解压缩</span><br></pre></td></tr></table></figure>
 <p>static BOOL SDImageCacheOldShouldDecompressImages = YES; </p>
 <p>static BOOL SDImagedownloderOldShouldDecompressImages = YES; </p>
 <ul>
@@ -184,58 +184,6 @@
 <p>canche.shouldDecompressImages = SDImageCacheOldShouldDecompressImages; </p>
 <p>SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader]; </p>
 <p>downloder.shouldDecompressImages = SDImagedownloderOldShouldDecompressImages; </p>
-<p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 禁止手机睡眠</span><br></pre></td></tr></table></figure>
-<p>[UIApplication sharedApplication].idleTimerDisabled = YES;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 隐藏某行cell</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p>(CGFloat)tableView:(UITableView <em>)tableView heightForRowAtIndexPath:(NSIndexPath </em>)indexPath<br>{<br>// 如果是你需要隐藏的那一行，返回高度为0</p>
-<p>  if(indexPath.row == YouWantToHideRow){</p>
-<pre><code>return 0;
-</code></pre><p>  }</p>
-<pre><code>return 44;
-</code></pre><p>}</p>
-</li>
-</ul>
-<p>// 然后再你需要隐藏cell的时候调用<br>[self.tableView beginUpdates];<br>[self.tableView endUpdates];</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">- 禁用button高亮</span><br></pre></td></tr></table></figure>
-<p>button.adjustsImageWhenHighlighted = NO;<br>或者在创建的时候<br>UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 动画切换window的根控制器</span><br></pre></td></tr></table></figure>
-<p>[UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:.5f<br>options:UIViewAnimationOptionTransitionCrossDissolve animations:^{<br>        BOOL oldState = [UIView areAnimationsEnabled];<br>        [UIView setAnimationsEnabled:NO];<br>        [UIApplication sharedApplication].keyWindow.rootViewController = [[RootViewController alloc]init];<br>        [UIView setAnimationsEnabled:oldState];<br>    } completion:^(BOOL finished) {</p>
-<pre><code>}];
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">- 去除数组中重复的对象</span><br></pre></td></tr></table></figure>
-<p>NSArray *newArr = [oldArr valueForKeyPath:@”@distinctUnionOfObjects.self”];</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- 编译的时候遇到 no such file or directory: /users/apple/XXX</span><br><span class="line">  - 是因为编译的时候，在此路径下找不到这个文件，解决这个问题，首先是是要检查缺少的文件是不是在工程中，如果不在工程中，需要从本地拖进去，如果发现已经存在工程中了，或者拖进去还是报错，这时候需要去build phases中搜索这个文件，这时候很可能会搜出现两个相同的文件，这时候，有一个路径是正确的，删除另外一个即可。如果删除了还是不行，需要把两个都删掉，然后重新往工程里拖进这个文件即可</span><br><span class="line">  </span><br><span class="line">- iOS8系统中，tableView最好实现下-tableView: heightForRowAtIndexPath:这个代理方法，要不然在iOS8中可能就会出现显示不全或者无法响应事件的问题</span><br><span class="line"></span><br><span class="line">- iOS8中实现侧滑功能的时候这个方法必须实现，要不然在iOS8中无法侧滑</span><br></pre></td></tr></table></figure>
-<p>// 必须写的方法，和editActionsForRowAtIndexPath配对使用，里面什么不写也行</p>
-<ul>
-<li>(void)tableView:(UITableView <em>)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath </em>)indexPath {</li>
-</ul>
-<p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 三个比较特殊的通知</span><br></pre></td></tr></table></figure></p>
-<p>NSSystemTimeZoneDidChangeNotification监听修改时间界面的两个按钮状态变化</p>
-<p>UIApplicationSignificantTimeChangeNotification 监听用户改变时间 （只要点击自动设置按钮就会调用）</p>
-<p>NSSystemClockDidChangeNotification 监听用户修改时间（时间不同才会调用）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- SDWebImage本地缓存有时候会害人。如果之前缓存过一张图片，即使下次服务器换了这张图片，但是图片url没换，用sdwebimage下载下来的还是以前那张,所以遇到这种问题，不要先去怼服务器，清空下缓存再试就好了。</span><br><span class="line"></span><br><span class="line">- 跳进app权限设置</span><br></pre></td></tr></table></figure>
-<p>// 跳进app设置<br>if (UIApplicationOpenSettingsURLString != NULL) {<br>    UIApplication <em>application = [UIApplication sharedApplication];<br>    NSURL </em>URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];<br>    if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {<br>        [application openURL:URL options:@{}<br>           completionHandler:nil];<br>    } else {<br>        [application openURL:URL];<br>    }<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 给一个view截图</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>(UIImage <em>)cutImageWithView:(UIView </em>)view<br>{<br>  UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0);<br>  [view.layer renderInContext:UIGraphicsGetCurrentContext()];<br>  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();<br>  UIGraphicsEndImageContext();</p>
-<p>  return image;<br>}</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 注意对象为nil的时候，调用此对象分类的方法不会执行</span><br><span class="line"></span><br><span class="line">- collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动：</span><br></pre></td></tr></table></figure>
-<p>collectionView.alwaysBounceHorizontal = YES;</p>
-<p>collectionView.alwaysBounceVertical = YES;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 颜色转图片</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>(UIImage <em>)imageWithColor:(UIColor </em>)color {</p>
-<p>  //描述一个矩形<br>  CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);<br>  //开启图形上下文<br>  UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);</p>
-<p>  //获得图形上下文<br>  CGContextRef ctx = UIGraphicsGetCurrentContext();</p>
-<p>  //使用color演示填充上下文<br>  CGContextSetFillColorWithColor(ctx, [color CGColor]);</p>
-<p>  //渲染上下文<br>  CGContextFillRect(ctx, rect);</p>
-<p>  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();</p>
-<p>  //关闭图形上下文<br>  UIGraphicsEndImageContext();</p>
-<p>  return image;</p>
-</li>
-</ul>
 <p>}</p>
 <p><code>`</code></p>
 
