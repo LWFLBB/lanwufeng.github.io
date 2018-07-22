@@ -16,7 +16,7 @@
 <meta property="og:description" content="大家在工作中经常会碰到需要使用个人的Github以及公司的Gitlab这样的一种情况，这时我们就需要配置不同的SSH Key了。具体步骤如下： 1、打开终端，切换到系统的SSH目录下 12cd ~/.ssh 2、生成自己Github的SSH Key 12ssh-keygen -t rsa -C &amp;quot;Github账号&amp;quot; -f github_rsa">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://orojgblml.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-05-24%20%E4%B8%8B%E5%8D%886.30.24.png">
-<meta property="og:updated_time" content="2018-07-06T12:18:50.440Z">
+<meta property="og:updated_time" content="2018-07-22T15:59:56.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置多个SSH Key">
 <meta name="twitter:description" content="大家在工作中经常会碰到需要使用个人的Github以及公司的Gitlab这样的一种情况，这时我们就需要配置不同的SSH Key了。具体步骤如下： 1、打开终端，切换到系统的SSH目录下 12cd ~/.ssh 2、生成自己Github的SSH Key 12ssh-keygen -t rsa -C &amp;quot;Github账号&amp;quot; -f github_rsa">
@@ -185,7 +185,7 @@
 <li><strong>这里要注意的一点是，例如公司Gitlab主机地址是<a href="http://10.10.10.89:11000，那么HostName就是" target="_blank" rel="noopener">http://10.10.10.89:11000，那么HostName就是</a> 10.10.10.89</strong></li>
 </ul>
 <p>9、测试是否添加成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 测试GitHub</span><br><span class="line"></span><br><span class="line">ssh -T git@github.com</span><br><span class="line"></span><br><span class="line"># 测试GitLab</span><br><span class="line"></span><br><span class="line">ssh -T git@gitlab.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 测试GitHub</span><br><span class="line"># 就是刚刚你给Host取的名字</span><br><span class="line"></span><br><span class="line">ssh -T git@github</span><br><span class="line"></span><br><span class="line"># 测试GitLab</span><br><span class="line"></span><br><span class="line">ssh -T git@gitlab</span><br></pre></td></tr></table></figure>
 <p>10、不同项目切换不同的ssh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">取消全局 用户名/邮箱设置，并进入项目文件夹单独设置</span><br><span class="line">git config –global –unset user.name</span><br><span class="line">git config –global –unset user.email</span><br><span class="line"></span><br><span class="line"># 单独设置每个repo 用户名/邮箱</span><br><span class="line">git config user.email “xxxx@xx.com”</span><br><span class="line">git config user.name “xxxx”</span><br></pre></td></tr></table></figure></p>
 
       
