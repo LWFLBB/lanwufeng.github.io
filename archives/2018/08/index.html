@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ios开发小技巧合集 | Mr_lan&#39;s Blog</title>
+  <title>Archives: 2018/8 | Mr_lan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要记录日常工作中积累的一些iOS小技巧 隐藏某行cell  1234567891011- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;// 如果是你需要隐藏的那一行，返回高度为0if(indexPath.row == YouWantToHid">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ios开发小技巧合集">
-<meta property="og:url" content="http://yoursite.com/2018/07/15/ios开发小技巧合集/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Mr_lan&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
 <meta property="og:site_name" content="Mr_lan&#39;s Blog">
-<meta property="og:description" content="本文主要记录日常工作中积累的一些iOS小技巧 隐藏某行cell  1234567891011- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;// 如果是你需要隐藏的那一行，返回高度为0if(indexPath.row == YouWantToHid">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-07T10:51:57.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios开发小技巧合集">
-<meta name="twitter:description" content="本文主要记录日常工作中积累的一些iOS小技巧 隐藏某行cell  1234567891011- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;// 如果是你需要隐藏的那一行，返回高度为0if(indexPath.row == YouWantToHid">
+<meta name="twitter:title" content="Mr_lan&#39;s Blog">
   
     <link rel="alternative" href="/atom.xml" title="Mr_lan&#39;s Blog" type="application/atom+xml">
   
@@ -142,361 +138,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ios开发小技巧合集" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      ios开发小技巧合集
-    </h1>
-  
-
-        
-        <a href="/2018/07/15/ios开发小技巧合集/" class="archive-article-date">
-  	<time datetime="2018-07-15T05:34:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/08/07/cocoapods install 报相关 Error 解决方案 /" class="archive-article-date">
+  	<time datetime="2018-08-07T10:38:23.521Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="本文主要记录日常工作中积累的一些iOS小技巧"><a href="#本文主要记录日常工作中积累的一些iOS小技巧" class="headerlink" title="本文主要记录日常工作中积累的一些iOS小技巧"></a>本文主要记录日常工作中积累的一些iOS小技巧</h3><ul>
-<li>隐藏某行cell</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath</span><br><span class="line">&#123;</span><br><span class="line">// 如果是你需要隐藏的那一行，返回高度为0</span><br><span class="line">if(indexPath.row == YouWantToHideRow)&#123;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">return 44;</span><br><span class="line">&#125;</span><br><span class="line">// 然后再你需要隐藏cell的时候调用</span><br><span class="line">[self.tableView beginUpdates];</span><br><span class="line">[self.tableView endUpdates];</span><br></pre></td></tr></table></figure>
-<a id="more"></a> 
-<ul>
-<li>SDWebImage 加载大量高清图片时内存暴增</li>
-<li>解决方案：关闭SD加载高清大图时的解压缩</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">static BOOL SDImageCacheOldShouldDecompressImages = YES; </span><br><span class="line"></span><br><span class="line">static BOOL SDImagedownloderOldShouldDecompressImages = YES; </span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123; </span><br><span class="line"></span><br><span class="line">[super viewDidLoad]; </span><br><span class="line">// 关闭SD加载高清大图时的解压缩 </span><br><span class="line"></span><br><span class="line">SDImageCache *canche = [SDImageCache sharedImageCache]; </span><br><span class="line"></span><br><span class="line">SDImageCacheOldShouldDecompressImages = canche.shouldDecompressImages; </span><br><span class="line"></span><br><span class="line">canche.shouldDecompressImages = NO; </span><br><span class="line"></span><br><span class="line">SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader]; </span><br><span class="line"></span><br><span class="line">SDImagedownloderOldShouldDecompressImages = downloder.shouldDecompressImages; </span><br><span class="line"></span><br><span class="line">downloder.shouldDecompressImages = NO; </span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">-(void)dealloc &#123; </span><br><span class="line"></span><br><span class="line">SDImageCache *canche = [SDImageCache sharedImageCache]; </span><br><span class="line"></span><br><span class="line">canche.shouldDecompressImages = SDImageCacheOldShouldDecompressImages; </span><br><span class="line"></span><br><span class="line">SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader]; </span><br><span class="line"></span><br><span class="line">downloder.shouldDecompressImages = SDImagedownloderOldShouldDecompressImages; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>SDWebImage本地缓存有时候会害人。如果之前缓存过一张图片，即使下次服务器换了这张图片，但是图片url没换，用SDWebimage下载下来的还是以前那张，所以遇到这种问题，不要先去怼服务器，清空下缓存再试就好了。</p>
-</li>
-<li><p>禁止手机睡眠</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[UIApplication sharedApplication].idleTimerDisabled = YES;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>禁用button高亮</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button.adjustsImageWhenHighlighted = NO;</span><br><span class="line">或者在创建的时候</span><br><span class="line">UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>动画切换window的根控制器</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:.5f </span><br><span class="line">options:UIViewAnimationOptionTransitionCrossDissolve animations:^&#123;</span><br><span class="line">BOOL oldState = [UIView areAnimationsEnabled];</span><br><span class="line">[UIView setAnimationsEnabled:NO];</span><br><span class="line">[UIApplication sharedApplication].keyWindow.rootViewController = [[RootViewController alloc]init];</span><br><span class="line">[UIView setAnimationsEnabled:oldState];</span><br><span class="line">&#125; completion:^(BOOL finished) &#123;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>去除数组中重复的对象</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSArray *newArr = [oldArr valueForKeyPath:@&quot;@distinctUnionOfObjects.self&quot;];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>编译的时候遇到 no such file or directory: /users/apple/XXX</li>
-<li><p>是因为编译的时候，在此路径下找不到这个文件，解决这个问题，首先是是要检查缺少的文件是不是在工程中，如果不在工程中，需要从本地拖进去，如果发现已经存在工程中了，或者拖进去还是报错，这时候需要去build phases中搜索这个文件，这时候很可能会搜出现两个相同的文件，这时候，有一个路径是正确的，删除另外一个即可。如果删除了还是不行，需要把两个都删掉，然后重新往工程里拖进这个文件即可</p>
-</li>
-<li><p>iOS8系统中，tableView最好实现下-tableView: heightForRowAtIndexPath:这个代理方法，要不然在iOS8中可能就会出现显示不全或者无法响应事件的问题</p>
-</li>
-<li><p>iOS8中实现侧滑功能的时候这个方法必须实现，要不然在iOS8中无法侧滑</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 必须写的方法，和editActionsForRowAtIndexPath配对使用，里面什么不写也行</span><br><span class="line">- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>三个比较特殊的通知</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NSSystemTimeZoneDidChangeNotification监听修改时间界面的两个按钮状态变化</span><br><span class="line"></span><br><span class="line">UIApplicationSignificantTimeChangeNotification 监听用户改变时间 （只要点击自动设置按钮就会调用）</span><br><span class="line"></span><br><span class="line">NSSystemClockDidChangeNotification 监听用户修改时间（时间不同才会调用）</span><br></pre></td></tr></table></figure>
-<ul>
-<li>获取不到UICollectionView指定cell的问题</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[self.collectionView layoutIfNeeded];//添加这句话就好 </span><br><span class="line"></span><br><span class="line">QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_index inSection:0]];</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 跳进app权限设置</span><br></pre></td></tr></table></figure>
-<p>// 跳进app设置<br>if (UIApplicationOpenSettingsURLString != NULL) {<br>UIApplication <em>application = [UIApplication sharedApplication];<br>NSURL </em>URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];<br>if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {<br>[application openURL:URL options:@{}<br>completionHandler:nil];<br>} else {<br>[application openURL:URL];<br>}<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 给一个view截图</span><br></pre></td></tr></table></figure>
-<ul>
-<li>(UIImage <em>)cutImageWithView:(UIView </em>)view<br>{<br>UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0);<br>[view.layer renderInContext:UIGraphicsGetCurrentContext()];<br>UIImage *image = UIGraphicsGetImageFromCurrentImageContext();<br>UIGraphicsEndImageContext();</li>
-</ul>
-<p>return image;<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 注意对象为nil的时候，调用此对象分类的方法不会执行</span><br><span class="line"></span><br><span class="line">- collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动：</span><br></pre></td></tr></table></figure>
-<p>collectionView.alwaysBounceHorizontal = YES;</p>
-<p>collectionView.alwaysBounceVertical = YES;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 颜色转图片</span><br></pre></td></tr></table></figure>
-<ul>
-<li>(UIImage <em>)imageWithColor:(UIColor </em>)color {</li>
-</ul>
-<p>//描述一个矩形<br>CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);<br>//开启图形上下文<br>UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);</p>
-<p>//获得图形上下文<br>CGContextRef ctx = UIGraphicsGetCurrentContext();</p>
-<p>//使用color演示填充上下文<br>CGContextSetFillColorWithColor(ctx, [color CGColor]);</p>
-<p>//渲染上下文<br>CGContextFillRect(ctx, rect);</p>
-<p>UIImage *image = UIGraphicsGetImageFromCurrentImageContext();</p>
-<p>//关闭图形上下文<br>UIGraphicsEndImageContext();</p>
-<p>return image;</p>
-<p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- view设置圆角</span><br></pre></td></tr></table></figure>
-<p>#define ViewBorderRadius(View, Radius, Width, Color)\<br>\<br>[View.layer setCornerRadius:(Radius)];\<br>[View.layer setMasksToBounds:YES];\<br>[View.layer setBorderWidth:(Width)];\<br>[View.layer setBorderColor:[Color CGColor]] // view圆角</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- view某个角度设置圆角</span><br></pre></td></tr></table></figure>
-<p>UIBezierPath <em>maskPath = [UIBezierPath bezierPathWithRoundedRect:self.whiteView.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(10, 10)];<br>CAShapeLayer </em>maskLayer = [[CAShapeLayer alloc] init];<br>maskLayer.frame = self.whiteView.bounds;<br>maskLayer.path = maskPath.CGPath;<br>self.whiteView.layer.mask = maskLayer;</p>
-<p>##指定了需要成为圆角的角该参数是UIRectCorner类型的，可选的值有：</p>
-<ul>
-<li>UIRectCornerTopLeft</li>
-<li>UIRectCornerTopRight</li>
-<li>UIRectCornerBottomLeft</li>
-<li>UIRectCornerBottomRight</li>
-<li>UIRectCornerAllCorners</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 由角度转换弧度</span><br></pre></td></tr></table></figure>
-<p>#define DegreesToRadian(x) (M_PI * (x) / 180.0)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 由弧度转换角度</span><br></pre></td></tr></table></figure>
-<p>#define RadianToDegrees(radian) (radian*180.0)/(M_PI)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取图片资源</span><br></pre></td></tr></table></figure></p>
-<p>//建议使用前两种宏定义,性能高于后者</p>
-<p>#define LOADIMAGE(file,ext) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:ext]]</p>
-<p>#define IMAGE(A) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:A ofType:nil]]</p>
-<p>#define ImageNamed(_pointer) [UIImage imageNamed:[UIUtil imageName:_pointer]]</p>
-<p>#define UIImageName(name) [UIImage imageNamed:name]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 文件路径</span><br></pre></td></tr></table></figure>
-<p>//获取temp</p>
-<p>#define PathTemp NSTemporaryDirectory()</p>
-<p>//获取Document</p>
-<p>#define PathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]</p>
-<p>//获取 Cache</p>
-<p>#define PathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- GCD代码只执行一次</span><br></pre></td></tr></table></figure>
-<p>#define kDISPATCH_ONCE_BLOCK(onceBlock) static dispatch_once_t onceToken;<br>dispatch_once(&amp;onceToken, onceBlock);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 自定义NSLog</span><br></pre></td></tr></table></figure></p>
-<p>//DEBUG  模式下打印日志,当前行</p>
-<p>#ifdef DEBUG</p>
-<h1 id="define-DLog-fmt-…-NSLog-”-s-Line-d-“-fmt-PRETTY-FUNCTION-LINE-VA-ARGS"><a href="#define-DLog-fmt-…-NSLog-”-s-Line-d-“-fmt-PRETTY-FUNCTION-LINE-VA-ARGS" class="headerlink" title="define DLog(fmt, …) NSLog((@”%s [Line %d] “ fmt), PRETTY_FUNCTION, LINE, ##VA_ARGS);"></a>define DLog(fmt, …) NSLog((@”%s [Line %d] “ fmt), <strong>PRETTY_FUNCTION</strong>, <strong>LINE</strong>, ##<strong>VA_ARGS</strong>);</h1><p>#else</p>
-<h1 id="define-DLog-…"><a href="#define-DLog-…" class="headerlink" title="define DLog(…)"></a>define DLog(…)</h1><p>#endif</p>
-<p>//重写NSLog,Debug模式下打印日志和当前行数</p>
-<p>#if DEBUG</p>
-<p>#define NSLog(FORMAT, …) fprintf(stderr,”\nfunction:%s line:%d content:%s\n”, <strong>FUNCTION</strong>, <strong>LINE</strong>, [[NSString stringWithFormat:FORMAT, ##<strong>VA_ARGS</strong>] UTF8String]);</p>
-<p>#else</p>
-<p>#define NSLog(FORMAT, …) nil</p>
-<p>#endif</p>
-<p>//DEBUG  模式下打印日志,当前行 并弹出一个警告</p>
-<p>#ifdef DEBUG</p>
-<h1 id="define-ULog-fmt-…-UIAlertView-alert-UIAlertView-alloc-initWithTitle-NSString-stringWithFormat-”-s-n-Line-d-“-PRETTY-FUNCTION-LINE-message-NSString-stringWithFormat-fmt-VA-ARGS-delegate-nil-cancelButtonTitle-”Ok”-otherButtonTitles-nil-alert-show"><a href="#define-ULog-fmt-…-UIAlertView-alert-UIAlertView-alloc-initWithTitle-NSString-stringWithFormat-”-s-n-Line-d-“-PRETTY-FUNCTION-LINE-message-NSString-stringWithFormat-fmt-VA-ARGS-delegate-nil-cancelButtonTitle-”Ok”-otherButtonTitles-nil-alert-show" class="headerlink" title="define ULog(fmt, …)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@”%s\n [Line %d] “, PRETTY_FUNCTION, LINE] message:[NSString stringWithFormat:fmt, ##VA_ARGS]  delegate:nil cancelButtonTitle:@”Ok” otherButtonTitles:nil]; [alert show]; }"></a>define ULog(fmt, …)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@”%s\n [Line %d] “, <strong>PRETTY_FUNCTION</strong>, <strong>LINE</strong>] message:[NSString stringWithFormat:fmt, ##<strong>VA_ARGS</strong>]  delegate:nil cancelButtonTitle:@”Ok” otherButtonTitles:nil]; [alert show]; }</h1><p>#else</p>
-<h1 id="define-ULog-…"><a href="#define-ULog-…" class="headerlink" title="define ULog(…)"></a>define ULog(…)</h1><p>#endif<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Font</span><br></pre></td></tr></table></figure></p>
-<p>#define FONTS(size) [UIFont systemFontOfSize:(size)]</p>
-<p>#define BOLDFONTS(size) [UIFont boldSystemFontOfSize:(size)]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- GCD</span><br></pre></td></tr></table></figure>
-<p>//主线程</p>
-<p>#define kDISPATCH_MAIN_THREAD(mainQueueBlock) dispatch_async(dispatch_get_main_queue(), mainQueueBlock);</p>
-<p>//异步线程</p>
-<p>#define kDISPATCH_GLOBAL_QUEUE_DEFAULT(globalQueueBlock) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), globalQueueBlocl);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 通知</span><br></pre></td></tr></table></figure>
-<p>#define NOTIF_ADD(n, f)     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(f) name:n object:nil]</p>
-<p>#define NOTIF_POST(n, o)    [[NSNotificationCenter defaultCenter] postNotificationName:n object:o]</p>
-<p>#define NOTIF_REMV()        [[NSNotificationCenter defaultCenter] removeObserver:self]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Color</span><br></pre></td></tr></table></figure></p>
-<p>// RGB颜色转换（16进制-&gt;10进制）</p>
-<p>#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue &amp; 0xFF0000) &gt;&gt; 16))/255.0 green:((float)((rgbValue &amp; 0xFF00) &gt;&gt; 8))/255.0 blue:((float)(rgbValue &amp; 0xFF))/255.0 alpha:1.0]</p>
-<p>// 获取RGB颜色</p>
-<p>#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]</p>
-<p>//清除背景色</p>
-<p>#define CLEARCOLOR [UIColor clearColor]</p>
-<p>// 随机色</p>
-<p>#define RandomCOLOR RGBCOLOR(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取window</span><br></pre></td></tr></table></figure>
-<p>+(UIWindow<em>)getWindow {<br>UIWindow</em> win = nil; //[UIApplication sharedApplication].keyWindow;<br>for (id item in [UIApplication sharedApplication].windows) {<br>if ([item class] == [UIWindow class]) {<br>if (!((UIWindow*)item).hidden) {<br>win = item;<br>break;<br>}<br>}<br>}<br>return win;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 修改textField的placeholder的字体颜色、大小</span><br></pre></td></tr></table></figure></p>
-<p>[textField setValue:[UIColor redColor] forKeyPath:@”_placeholderLabel.textColor”];<br>[textField setValue:[UIFont boldSystemFontOfSize:16] forKeyPath:@”_placeholderLabel.font”];<br>// 或者<br>textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13],NSForegroundColorAttributeName : [UIColor grayColor]}];</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- APP缓存</span><br></pre></td></tr></table></figure>
-<p>/*<em> </em>  存 数组数据<em>/<br>+(void)setObectOfArray:(NSArray </em>)array fileName:(NSString *)fileName<br>{</p>
-<p>//缓存文件的 根路径<br>NSString <em>path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];<br>// 缓存 文件夹 路径<br>NSString </em>filePath = [path stringByAppendingPathComponent:@”XXX.dataCache”];</p>
-<p>NSFileManager *fileManager = [NSFileManager defaultManager];</p>
-<p>if ([fileManager fileExistsAtPath:filePath] == NO)<br>{<br>[fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];<br>}<br>//缓存文件的路径<br>NSString * cacheFilePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@”%@.plist”,fileName]];<br>BOOL isSuccess = [array writeToFile:cacheFilePath atomically:NO];<br>if (isSuccess) {<br>NSLog(@”缓存数据成功:---%@”,cacheFilePath);<br>}else<br>{<br>NSLog(@”缓存数据失败:---%@”,cacheFilePath);<br>}</p>
-<p>}</p>
-<p>/<em>**  取 数组数据</em>/<br>+(NSArray <em>)cacheArrayForFileName:(NSString </em>)fileName<br>{</p>
-<p>//缓存文件的 根路径<br>NSString <em>path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];<br>// 缓存 文件夹 路径<br>NSString </em>filePath = [path stringByAppendingPathComponent:@”XXX.dataCache”];<br>//缓存文件的路径<br>NSString <em> cacheFilePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@”%@.plist”,fileName]];<br>//取得缓存文件<br>NSArray </em>array  = [NSArray arrayWithContentsOfFile:cacheFilePath];</p>
-<p>return array;<br>}</p>
-<p>/<em>** 清除 这个全部的缓存数据 </em>/<br>+(void)clearCacheListData:(void (^)())completion<br>{<br>// 异线程<br>dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{<br>// 清楚缓存<br>//缓存文件的 根路径<br>NSString <em>path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];<br>// 缓存 文件夹 路径<br>NSString </em>filePath = [path stringByAppendingPathComponent:@”FortuneDonkey.dataCache”];<br>NSFileManager *manager = [NSFileManager defaultManager];<br>//移除文件夹<br>[manager removeItemAtPath:filePath error:nil];<br>//  创建一个新的文件夹<br>[manager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];<br>if (completion)<br>{<br>//回调主线程<br>dispatch_async(dispatch_get_main_queue(), ^{<br>completion();<br>});<br>}<br>});<br>}</p>
-<p>/<em>** 清除SD缓存数据 </em>/<br>-(void)clearSDCacheData<br>{<br>//先清除内存中的图片缓存<br>[[SDImageCache sharedImageCache] clearMemory];<br>//清除磁盘的缓存<br>[[SDImageCache sharedImageCache] clearDisk];<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取APP缓存大小</span><br></pre></td></tr></table></figure>
-<ul>
-<li>(CGFloat)getCachSize {</li>
-</ul>
-<p>NSUInteger imageCacheSize = [[SDImageCache sharedImageCache] getSize];<br>//获取自定义缓存大小<br>//用枚举器遍历 一个文件夹的内容<br>//1.获取 文件夹枚举器<br>NSString <em>myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@”Library/Caches”];<br>NSDirectoryEnumerator </em>enumerator = [[NSFileManager defaultManager] enumeratorAtPath:myCachePath];<br>__block NSUInteger count = 0;<br>//2.遍历<br>for (NSString <em>fileName in enumerator) {<br>NSString </em>path = [myCachePath stringByAppendingPathComponent:fileName];<br>NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];<br>count += fileDict.fileSize;//自定义所有缓存大小<br>}<br>// 得到是字节  转化为M<br>CGFloat totalSize = ((CGFloat)imageCacheSize+count)/1024/1024;<br>return totalSize;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 几个常用权限判断</span><br></pre></td></tr></table></figure></p>
-<p>if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusDenied) {<br>NSLog(@”没有定位权限”);<br>}<br>AVAuthorizationStatus statusVideo = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];<br>if (statusVideo == AVAuthorizationStatusDenied) {<br>NSLog(@”没有摄像头权限”);<br>}<br>//是否有麦克风权限<br>AVAuthorizationStatus statusAudio = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];<br>if (statusAudio == AVAuthorizationStatusDenied) {<br>NSLog(@”没有录音权限”);<br>}<br>[PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {<br>if (status == PHAuthorizationStatusDenied) {<br>NSLog(@”没有相册权限”);<br>}<br>}];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 系统相关的一些方法</span><br></pre></td></tr></table></figure></p>
-<p>//获取系统版本</p>
-<p>#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]</p>
-<p>#define IS_IOS10_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 10.0)</p>
-<p>//获取当前语言</p>
-<p>#define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])</p>
-<p>//判断是否 Retina屏、设备是否%fhone 5、是否是iPad</p>
-<p>#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)</p>
-<p>#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)</p>
-<p>#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)</p>
-<p>#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)</p>
-<p>//判断是真机还是模拟器</p>
-<p>#if TARGET_OS_IPHONE<br>//iPhone Device</p>
-<p>#endif</p>
-<p>#if TARGET_IPHONE_SIMULATOR<br>//iPhone Simulator</p>
-<p>#endif<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 长按复制功能</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>(void)viewDidLoad<br>{<br>[self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pasteBoard:)]];<br>}</li>
-<li>(void)pasteBoard:(UILongPressGestureRecognizer <em>)longPress {<br>if (longPress.state == UIGestureRecognizerStateBegan) {<br>UIPasteboard </em>pasteboard = [UIPasteboard generalPasteboard];<br>pasteboard.string = @”我是文字”;<br>}<br>}</li>
-</ul>
-<p><code>`</code></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="http://orojgblml.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E9%92%B1%E7%A0%81.JPG">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="http://orojgblml.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.JPG">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/15/ios开发小技巧合集/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/08/07/cocoapods install 报相关 Error 解决方案 /" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/07/09/Jenkins-GitLab-Xcode-Fir-实现iOS自动打包和分发/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Jenkins + GitLab + Xcode + Fir 实现iOS自动打包和分发</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2018/07/15/ios开发小技巧合集/",
-  owner: 'lanwufeng',
-  repo: 'lanwufeng.github.io',
-  oauth: {
-    client_id: 'a677c7e5769bd15d64ca',
-    client_secret: '449c43607d3416348bac6b34aa84d4b96c94221d',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -519,8 +197,8 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
