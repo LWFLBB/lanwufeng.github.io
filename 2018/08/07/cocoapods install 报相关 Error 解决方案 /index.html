@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Mr_lan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cocoapods install 报相关 Error 解决方案pod install 出现LoadError - cannot load such file – nanaimo解决方案：1234567891011//卸载 cocoapodsgem uninstall cocoapods gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@global">
+  <meta name="description" content="cocoapods install 报相关 Error 解决方案 pod install 出现LoadError - cannot load such file – nanaimo   解决方案：  1234567891011//卸载 cocoapodsgem uninstall cocoapods gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mr_lan&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/2018/08/07/cocoapods install 报相关 Error 解决方案 /index.html">
 <meta property="og:site_name" content="Mr_lan&#39;s Blog">
-<meta property="og:description" content="cocoapods install 报相关 Error 解决方案pod install 出现LoadError - cannot load such file – nanaimo解决方案：1234567891011//卸载 cocoapodsgem uninstall cocoapods gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@global">
+<meta property="og:description" content="cocoapods install 报相关 Error 解决方案 pod install 出现LoadError - cannot load such file – nanaimo   解决方案：  1234567891011//卸载 cocoapodsgem uninstall cocoapods gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-07T10:49:45.901Z">
+<meta property="og:updated_time" content="2018-08-07T10:55:03.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mr_lan&#39;s Blog">
-<meta name="twitter:description" content="cocoapods install 报相关 Error 解决方案pod install 出现LoadError - cannot load such file – nanaimo解决方案：1234567891011//卸载 cocoapodsgem uninstall cocoapods gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@global">
+<meta name="twitter:description" content="cocoapods install 报相关 Error 解决方案 pod install 出现LoadError - cannot load such file – nanaimo   解决方案：  1234567891011//卸载 cocoapodsgem uninstall cocoapods gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@">
   
     <link rel="alternative" href="/atom.xml" title="Mr_lan&#39;s Blog" type="application/atom+xml">
   
@@ -147,9 +147,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="cocoapods-install-报相关-Error-解决方案"><a href="#cocoapods-install-报相关-Error-解决方案" class="headerlink" title="cocoapods install 报相关 Error 解决方案"></a>cocoapods install 报相关 Error 解决方案</h2><h4 id="pod-install-出现LoadError-cannot-load-such-file-–-nanaimo"><a href="#pod-install-出现LoadError-cannot-load-such-file-–-nanaimo" class="headerlink" title="pod install 出现LoadError - cannot load such file – nanaimo"></a>pod install 出现LoadError - cannot load such file – nanaimo</h4><h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//卸载 cocoapods</span><br><span class="line">gem uninstall cocoapods </span><br><span class="line"></span><br><span class="line">gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@global cocoapods</span><br><span class="line"></span><br><span class="line">//卸载 nanaimo</span><br><span class="line">gem uninstall nanaimo</span><br><span class="line">gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@global nanaimo </span><br><span class="line"></span><br><span class="line">//安装更新cocoapods</span><br><span class="line">gem install cocoapods</span><br></pre></td></tr></table></figure>
+        <h2 id="cocoapods-install-报相关-Error-解决方案"><a href="#cocoapods-install-报相关-Error-解决方案" class="headerlink" title="cocoapods install 报相关 Error 解决方案"></a>cocoapods install 报相关 Error 解决方案</h2><ol>
+<li>pod install 出现LoadError - cannot load such file – nanaimo</li>
+</ol>
+<ul>
+<li>解决方案：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//卸载 cocoapods</span><br><span class="line">gem uninstall cocoapods </span><br><span class="line"></span><br><span class="line">gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@global cocoapods</span><br><span class="line"></span><br><span class="line">//卸载 nanaimo</span><br><span class="line">gem uninstall nanaimo</span><br><span class="line">gem uninstall -i /Users/XXX/.rvm/gems/ruby-2.2.4@global nanaimo </span><br><span class="line"></span><br><span class="line">//安装更新cocoapods</span><br><span class="line">gem install cocoapods</span><br></pre></td></tr></table></figure>
 <a id="more"></a> 
-<h4 id="出现LoadError-cannot-load-such-file-–-macho"><a href="#出现LoadError-cannot-load-such-file-–-macho" class="headerlink" title="出现LoadError - cannot load such file – macho"></a>出现LoadError - cannot load such file – macho</h4><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//终端打开</span><br><span class="line">cd /Users/weiyuxiang/.rvm/gems/ruby-2.2.4/gems/cocoapods-1.5.3/lib/cocoapods/sandbox</span><br><span class="line"></span><br><span class="line">//打开 file_accessor.rb 文件，修改</span><br><span class="line">autoload :MachO, &apos;macho&apos; 修改成 require &apos;macho&apos;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>出现LoadError - cannot load such file – macho</li>
+</ol>
+<ul>
+<li>解决方案</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//终端打开</span><br><span class="line">cd /Users/weiyuxiang/.rvm/gems/ruby-2.2.4/gems/cocoapods-1.5.3/lib/cocoapods/sandbox</span><br><span class="line"></span><br><span class="line">//打开 file_accessor.rb 文件，修改</span><br><span class="line">autoload :MachO, &apos;macho&apos; 修改成 require &apos;macho&apos;</span><br></pre></td></tr></table></figure>
 
       
 
