@@ -6,46 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Mac下安装Windows虚拟机 | Mr_lan&#39;s Blog</title>
+  <title>iOS APP内跳转到系统相册（包含其它APP间跳转） | Mr_lan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="说起虚拟机软件，除了比较常用的  VMWare Workstation / Player 和  Parallels Desktop 等商业软件外，还有一款相当强大且开源免费跨平台的虚拟机软件——它就是 VirtualBox。 VirtualBox 完全免费开源，可跨平台运行在  Win、Mac、Linux 系统上。加上该虚拟机功能强大且性能出色，可以流畅虚拟运行各大主流操作系统，如微软全系列 (包">
+  <meta name="description" content="APP间的跳转主要通过UIApplication.shared.openURL(url)]这种方法来实现的，但iOS10后又稍加不同。 1234567891011121314let urlStr = &amp;quot;weixin://&amp;quot;            if let url = URL(string:urlStr) &amp;#123;                if #available">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac下安装Windows虚拟机">
-<meta property="og:url" content="http://yoursite.com/2018/07/05/Mac下安装Windows虚拟机/index.html">
+<meta property="og:title" content="iOS APP内跳转到系统相册（包含其它APP间跳转）">
+<meta property="og:url" content="http://yoursite.com/2017/12/31/iOS APP内跳转到系统相册（包含其它APP间跳转）/index.html">
 <meta property="og:site_name" content="Mr_lan&#39;s Blog">
-<meta property="og:description" content="说起虚拟机软件，除了比较常用的  VMWare Workstation / Player 和  Parallels Desktop 等商业软件外，还有一款相当强大且开源免费跨平台的虚拟机软件——它就是 VirtualBox。 VirtualBox 完全免费开源，可跨平台运行在  Win、Mac、Linux 系统上。加上该虚拟机功能强大且性能出色，可以流畅虚拟运行各大主流操作系统，如微软全系列 (包">
+<meta property="og:description" content="APP间的跳转主要通过UIApplication.shared.openURL(url)]这种方法来实现的，但iOS10后又稍加不同。 1234567891011121314let urlStr = &amp;quot;weixin://&amp;quot;            if let url = URL(string:urlStr) &amp;#123;                if #available">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/%E8%BF%85%E9%9B%B7%E6%B5%8B%E9%80%9F.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox-1.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox-2.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox-%203.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--1.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--2.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--3.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--4.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--5.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--6.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--7.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--8.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--9.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--10.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--11.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--12.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--13.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--14.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--15.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--16.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--17.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--18.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--19.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--20.png">
-<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox--21.png">
-<meta property="og:updated_time" content="2018-07-06T12:02:31.851Z">
+<meta property="og:image" content="http://orojgblml.bkt.clouddn.com/%E8%B7%B3%E8%BD%AC%E7%9B%B8%E5%86%8C.gif">
+<meta property="og:updated_time" content="2018-09-08T03:47:17.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac下安装Windows虚拟机">
-<meta name="twitter:description" content="说起虚拟机软件，除了比较常用的  VMWare Workstation / Player 和  Parallels Desktop 等商业软件外，还有一款相当强大且开源免费跨平台的虚拟机软件——它就是 VirtualBox。 VirtualBox 完全免费开源，可跨平台运行在  Win、Mac、Linux 系统上。加上该虚拟机功能强大且性能出色，可以流畅虚拟运行各大主流操作系统，如微软全系列 (包">
-<meta name="twitter:image" content="http://orojgblml.bkt.clouddn.com/VirtualBox.png">
+<meta name="twitter:title" content="iOS APP内跳转到系统相册（包含其它APP间跳转）">
+<meta name="twitter:description" content="APP间的跳转主要通过UIApplication.shared.openURL(url)]这种方法来实现的，但iOS10后又稍加不同。 1234567891011121314let urlStr = &amp;quot;weixin://&amp;quot;            if let url = URL(string:urlStr) &amp;#123;                if #available">
+<meta name="twitter:image" content="http://orojgblml.bkt.clouddn.com/%E8%B7%B3%E8%BD%AC%E7%9B%B8%E5%86%8C.gif">
   
     <link rel="alternative" href="/atom.xml" title="Mr_lan&#39;s Blog" type="application/atom+xml">
   
@@ -169,92 +145,133 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Mac下安装Windows虚拟机" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS APP内跳转到系统相册（包含其它APP间跳转）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Mac下安装Windows虚拟机
+      iOS APP内跳转到系统相册（包含其它APP间跳转）
     </h1>
   
 
         
-        <a href="/2018/07/05/Mac下安装Windows虚拟机/" class="archive-article-date">
-  	<time datetime="2018-07-05T12:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
+        <a href="/2017/12/31/iOS APP内跳转到系统相册（包含其它APP间跳转）/" class="archive-article-date">
+  	<time datetime="2017-12-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>说起虚拟机软件，除了比较常用的  VMWare Workstation / Player 和  Parallels Desktop 等商业软件外，还有一款相当强大且开源免费跨平台的虚拟机软件——它就是 VirtualBox。</p>
-<p>VirtualBox 完全免费开源，可跨平台运行在  Win、Mac、Linux 系统上。加上该虚拟机功能强大且性能出色，可以流畅虚拟运行各大主流操作系统，如微软全系列 (包括 Windows 10) / Linux 各种发行版 (Ubuntu / CentOS / Deepin ) 甚至是 Android 等，能应对各种场景需求。因此它一直是无数用户首选的虚拟机软件……<br><a id="more"></a> </p>
-<h1 id="一、准备工具"><a href="#一、准备工具" class="headerlink" title="一、准备工具"></a>一、准备工具</h1><ul>
-<li>VirtualBox虚拟机下载：<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a></li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox.png" alt="VirtualBox"></p>
-<ul>
-<li>windows7 32位纯净版下载地址：<a href="http://www.xitongtiandi.com/Windows7/148.html" target="_blank" rel="noopener">http://www.xitongtiandi.com/Windows7/148.html</a><br>ps:下载太慢？等着快睡着？没事，给大家分享一个利器，Mac迅雷破解版 <a href="https://pan.baidu.com/s/1dGMeCH7" target="_blank" rel="noopener">https://pan.baidu.com/s/1dGMeCH7</a>  提取码 rm9i</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/%E8%BF%85%E9%9B%B7%E6%B5%8B%E9%80%9F.png" alt="下载速度"></p>
-<h1 id="二、安装VirtualBox"><a href="#二、安装VirtualBox" class="headerlink" title="二、安装VirtualBox"></a>二、安装VirtualBox</h1><ul>
-<li>一路傻瓜式安装。。。</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox-1.png" alt="VirtualBox安装"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox-2.png" alt="VirtualBox安装"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox-%203.png" alt="VirtualBox安装"></p>
-<h1 id="三、新建虚拟机"><a href="#三、新建虚拟机" class="headerlink" title="三、新建虚拟机"></a>三、新建虚拟机</h1><p>接下来按照图片一步步来即可，注意标红部分</p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--1.png" alt="新建虚拟机"></p>
-<ul>
-<li>内存可分配大些</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--2.png" alt="新建虚拟机"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--3.png" alt="新建虚拟机"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--4.png" alt="新建虚拟机"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--5.png" alt="新建虚拟机"></p>
-<ul>
-<li>同样，这里分配虚拟硬盘大小时，直接设为最大，如果设置过小，安装时会失败。</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--6.png" alt="新建虚拟机"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--7.png" alt="新建虚拟机"></p>
-<h1 id="四、安装Windows-7"><a href="#四、安装Windows-7" class="headerlink" title="四、安装Windows 7"></a>四、安装Windows 7</h1><ul>
-<li>点击红色划线地方，选择下载好的win7镜像，设定之后，点击启动，进入到安装页面</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--8.png" alt="安装Windows 7"></p>
-<ul>
-<li>第一次进入可能会卡死，直接退出重启就好</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--9.png" alt="安装Windows 7"></p>
-<ul>
-<li>选择启动PE光盘系统，双击自动换分硬盘为4个1区，按照步骤一路安装即可。</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--10.png" alt="安装Windows 7"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--11.png" alt="安装Windows 7"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--12.png" alt="安装Windows 7"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--13.png" alt="安装Windows 7"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--14.png" alt="安装Windows 7"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--15.png" alt="安装Windows 7"></p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--16.png" alt="安装Windows 7"></p>
-<ul>
-<li>重启后完成安装</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--17.png" alt="安装Windows 7"></p>
-<h1 id="五、安装VirtualBox-Guest-Additions"><a href="#五、安装VirtualBox-Guest-Additions" class="headerlink" title="五、安装VirtualBox Guest Additions"></a>五、安装VirtualBox Guest Additions</h1><p>Windows7安装完成后，已经可以正常使用，但是此时会有很多不便，比如拖动虚拟机窗口会导致系统两边留空白，需要快捷键（command）才能实现Mac和win7系统切换等等。这时可以通过安装VirtualBox Guest Additions改善这些状况，它包含了可优化操作系统以实现更佳性能和可用性的设备驱动程序和系统应用程序。</p>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--18.png" alt="安装VirtualBox Guest Additions"></p>
-<ul>
-<li>安装方法：点击虚拟机系统窗口 -&gt; Devices -&gt; Insert  Guest Addtions CD Image，回到win7桌面，打开计算机，则会看到多了个CD驱动器</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--19.png" alt="安装VirtualBox Guest Additions"></p>
-<ul>
-<li>点开驱动器，选择VirtualBox Guest Additions进行安装，默认点下一步，中间会弹出要安装其他程序窗口，全部选择安装，直至安装成功</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--20.png" alt="安装VirtualBox Guest Additions"></p>
-<ul>
-<li>至此，VirtualBox Guest Additions安装完成，重启电脑，你就会发现之前的不便完全木有了。。。</li>
-</ul>
-<p><img src="http://orojgblml.bkt.clouddn.com/VirtualBox--21.png" alt="安装VirtualBox Guest Additions"></p>
+        <p>APP间的跳转主要通过UIApplication.shared.openURL(url)]这种方法来实现的，但iOS10后又稍加不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let urlStr = &quot;weixin://&quot;</span><br><span class="line"></span><br><span class="line">            if let url = URL(string:urlStr) &#123;</span><br><span class="line"></span><br><span class="line">                if #available(iOS 10.0, *) &#123;</span><br><span class="line"></span><br><span class="line">                    UIApplication.shared.open(url, options: Dictionary(), completionHandler: nil)</span><br><span class="line"></span><br><span class="line">                &#125; else &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    UIApplication.shared.openURL(url)</span><br><span class="line"></span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a> 
+<p>跳转系统内相册应用可以通过 UIApplication.shared.openURL(“photos-redirect://“)来实现，但是审核时会被当成使用私有API处理，所以我们需要做混淆处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//跳转</span><br><span class="line">let urlStr = self.decode(&quot;cGhvdG9zLXJlZGlyZWN0Oi8v&quot;)</span><br><span class="line"></span><br><span class="line">            if let url = URL(string:urlStr) &#123;</span><br><span class="line"></span><br><span class="line">                if #available(iOS 10.0, *) &#123;</span><br><span class="line"></span><br><span class="line">                    UIApplication.shared.open(url, options: Dictionary(), completionHandler: nil)</span><br><span class="line"></span><br><span class="line">                &#125; else &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    UIApplication.shared.openURL(url)</span><br><span class="line"></span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+<p>为通过审核，对 “photos-redirect://“ 进行base64编码混淆后再解码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//base64解码</span><br><span class="line"></span><br><span class="line">    func decode(_ string: String) -&gt; String &#123;</span><br><span class="line"></span><br><span class="line">        let data = Data(base64Encoded: string, options: [])</span><br><span class="line"></span><br><span class="line">        let decodedStr = String(data: data ?? Data(), encoding: .utf8)</span><br><span class="line"></span><br><span class="line">        return decodedStr ?? &quot;&quot;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>附上其它 URL Scheme</p>
+<table>
+<thead>
+<tr>
+<th>要打开的APP</th>
+<th>URL Scheme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打10086</td>
+<td>tel://10086</td>
+</tr>
+<tr>
+<td>App Store</td>
+<td>itms-apps://</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td><a href="http://muhlenxi.com/" target="_blank" rel="noopener">http://muhlenxi.com/</a></td>
+</tr>
+<tr>
+<td>Maps</td>
+<td>maps://</td>
+</tr>
+<tr>
+<td>备忘录</td>
+<td>mobilenotes://</td>
+</tr>
+<tr>
+<td>SMS</td>
+<td>sms://</td>
+</tr>
+<tr>
+<td>Mail</td>
+<td>mailto://</td>
+</tr>
+<tr>
+<td>iBooks</td>
+<td>ibooks://</td>
+</tr>
+<tr>
+<td>Music</td>
+<td>music://</td>
+</tr>
+<tr>
+<td>Videos</td>
+<td>videos://</td>
+</tr>
+<tr>
+<td>QQ</td>
+<td>mqq://</td>
+</tr>
+<tr>
+<td>微信</td>
+<td>weixin://</td>
+</tr>
+<tr>
+<td>淘宝</td>
+<td>taobao://</td>
+</tr>
+<tr>
+<td>点评</td>
+<td>dianping://    dianping://search</td>
+</tr>
+<tr>
+<td>微博</td>
+<td>sinaweibo://</td>
+</tr>
+<tr>
+<td>名片全能王</td>
+<td>camcard://</td>
+</tr>
+<tr>
+<td>支付宝</td>
+<td>alipay://</td>
+</tr>
+<tr>
+<td>豆瓣fm</td>
+<td>doubanradio://</td>
+</tr>
+<tr>
+<td>京东</td>
+<td>openapp.jdmoble://</td>
+</tr>
+<tr>
+<td>人人</td>
+<td>renren://</td>
+</tr>
+<tr>
+<td>知乎</td>
+<td>zhihu://</td>
+</tr>
+<tr>
+<td>优酷</td>
+<td>youku://</td>
+</tr>
+</tbody>
+</table>
+<p> <img src="http://orojgblml.bkt.clouddn.com/%E8%B7%B3%E8%BD%AC%E7%9B%B8%E5%86%8C.gif" alt="APP内跳转到相册"></p>
 
       
 
@@ -294,6 +311,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -344,7 +372,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/05/Mac下安装Windows虚拟机/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/31/iOS APP内跳转到系统相册（包含其它APP间跳转）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -358,20 +386,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/06/配置多个SSH-Key/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/05/app/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          配置多个SSH Key
+          Git 使用规范
         
       </div>
     </a>
   
-  
-    <a href="/2018/07/05/app/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Git 使用规范</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -408,7 +431,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2018/07/05/Mac下安装Windows虚拟机/",
+  id: "http://yoursite.com/2017/12/31/iOS APP内跳转到系统相册（包含其它APP间跳转）/",
   owner: 'lanwufeng',
   repo: 'lanwufeng.github.io',
   oauth: {
