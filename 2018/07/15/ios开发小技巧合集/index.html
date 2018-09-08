@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ios开发小技巧合集 | Mr_lan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要记录日常工作中积累的一些iOS小技巧 隐藏某行cell  1234567891011- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;// 如果是你需要隐藏的那一行，返回高度为0if(indexPath.row == YouWantToHid">
+  <meta name="description" content="本文主要记录日常工作中积累的一些iOS小技巧 禁止手机睡眠  1[UIApplication sharedApplication].idleTimerDisabled = YES;  隐藏某行cell  12345678910111213- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios开发小技巧合集">
 <meta property="og:url" content="http://yoursite.com/2018/07/15/ios开发小技巧合集/index.html">
 <meta property="og:site_name" content="Mr_lan&#39;s Blog">
-<meta property="og:description" content="本文主要记录日常工作中积累的一些iOS小技巧 隐藏某行cell  1234567891011- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;// 如果是你需要隐藏的那一行，返回高度为0if(indexPath.row == YouWantToHid">
+<meta property="og:description" content="本文主要记录日常工作中积累的一些iOS小技巧 禁止手机睡眠  1[UIApplication sharedApplication].idleTimerDisabled = YES;  隐藏某行cell  12345678910111213- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPat">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-07T10:51:57.561Z">
+<meta property="og:updated_time" content="2018-09-08T03:24:49.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios开发小技巧合集">
-<meta name="twitter:description" content="本文主要记录日常工作中积累的一些iOS小技巧 隐藏某行cell  1234567891011- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;// 如果是你需要隐藏的那一行，返回高度为0if(indexPath.row == YouWantToHid">
+<meta name="twitter:description" content="本文主要记录日常工作中积累的一些iOS小技巧 禁止手机睡眠  1[UIApplication sharedApplication].idleTimerDisabled = YES;  隐藏某行cell  12345678910111213- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPat">
   
     <link rel="alternative" href="/atom.xml" title="Mr_lan&#39;s Blog" type="application/atom+xml">
   
@@ -163,37 +163,41 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="本文主要记录日常工作中积累的一些iOS小技巧"><a href="#本文主要记录日常工作中积累的一些iOS小技巧" class="headerlink" title="本文主要记录日常工作中积累的一些iOS小技巧"></a>本文主要记录日常工作中积累的一些iOS小技巧</h3><ul>
-<li>隐藏某行cell</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath</span><br><span class="line">&#123;</span><br><span class="line">// 如果是你需要隐藏的那一行，返回高度为0</span><br><span class="line">if(indexPath.row == YouWantToHideRow)&#123;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">return 44;</span><br><span class="line">&#125;</span><br><span class="line">// 然后再你需要隐藏cell的时候调用</span><br><span class="line">[self.tableView beginUpdates];</span><br><span class="line">[self.tableView endUpdates];</span><br></pre></td></tr></table></figure>
-<a id="more"></a> 
-<ul>
-<li>SDWebImage 加载大量高清图片时内存暴增</li>
-<li>解决方案：关闭SD加载高清大图时的解压缩</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">static BOOL SDImageCacheOldShouldDecompressImages = YES; </span><br><span class="line"></span><br><span class="line">static BOOL SDImagedownloderOldShouldDecompressImages = YES; </span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123; </span><br><span class="line"></span><br><span class="line">[super viewDidLoad]; </span><br><span class="line">// 关闭SD加载高清大图时的解压缩 </span><br><span class="line"></span><br><span class="line">SDImageCache *canche = [SDImageCache sharedImageCache]; </span><br><span class="line"></span><br><span class="line">SDImageCacheOldShouldDecompressImages = canche.shouldDecompressImages; </span><br><span class="line"></span><br><span class="line">canche.shouldDecompressImages = NO; </span><br><span class="line"></span><br><span class="line">SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader]; </span><br><span class="line"></span><br><span class="line">SDImagedownloderOldShouldDecompressImages = downloder.shouldDecompressImages; </span><br><span class="line"></span><br><span class="line">downloder.shouldDecompressImages = NO; </span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">-(void)dealloc &#123; </span><br><span class="line"></span><br><span class="line">SDImageCache *canche = [SDImageCache sharedImageCache]; </span><br><span class="line"></span><br><span class="line">canche.shouldDecompressImages = SDImageCacheOldShouldDecompressImages; </span><br><span class="line"></span><br><span class="line">SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader]; </span><br><span class="line"></span><br><span class="line">downloder.shouldDecompressImages = SDImagedownloderOldShouldDecompressImages; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>SDWebImage本地缓存有时候会害人。如果之前缓存过一张图片，即使下次服务器换了这张图片，但是图片url没换，用SDWebimage下载下来的还是以前那张，所以遇到这种问题，不要先去怼服务器，清空下缓存再试就好了。</p>
-</li>
-<li><p>禁止手机睡眠</p>
-</li>
+<li>禁止手机睡眠</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[UIApplication sharedApplication].idleTimerDisabled = YES;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>禁用button高亮</li>
+<li>隐藏某行cell</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath</span><br><span class="line">&#123;</span><br><span class="line">// 如果是你需要隐藏的那一行，返回高度为0</span><br><span class="line"></span><br><span class="line">    if(indexPath.row == YouWantToHideRow)&#123;</span><br><span class="line">       return 0;</span><br><span class="line">    &#125;</span><br><span class="line">       return 44;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 然后再你需要隐藏cell的时候调用</span><br><span class="line">[self.tableView beginUpdates];</span><br><span class="line">[self.tableView endUpdates];</span><br></pre></td></tr></table></figure>
+<a id="more"></a> 
+<ul>
+<li>SDWebImage 加载大量高清图片时内存暴增<ul>
+<li>解决方案：关闭SD加载高清大图时的解压缩</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">static BOOL SDImageCacheOldShouldDecompressImages = YES; </span><br><span class="line"></span><br><span class="line">static BOOL SDImagedownloderOldShouldDecompressImages = YES; </span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123; </span><br><span class="line"></span><br><span class="line">  [super viewDidLoad]; </span><br><span class="line">  // 关闭SD加载高清大图时的解压缩 </span><br><span class="line">  </span><br><span class="line">  SDImageCache *canche = [SDImageCache sharedImageCache]; </span><br><span class="line">  </span><br><span class="line">  SDImageCacheOldShouldDecompressImages = canche.shouldDecompressImages; </span><br><span class="line">  </span><br><span class="line">  canche.shouldDecompressImages = NO; </span><br><span class="line">  </span><br><span class="line">  SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader]; </span><br><span class="line">  </span><br><span class="line">  SDImagedownloderOldShouldDecompressImages = downloder.shouldDecompressImages; </span><br><span class="line"> </span><br><span class="line">  downloder.shouldDecompressImages = NO; </span><br><span class="line"> </span><br><span class="line"> &#125; </span><br><span class="line"> </span><br><span class="line"> -(void)dealloc &#123; </span><br><span class="line"> </span><br><span class="line"> SDImageCache *canche = [SDImageCache sharedImageCache]; </span><br><span class="line"> </span><br><span class="line"> canche.shouldDecompressImages = SDImageCacheOldShouldDecompressImages; </span><br><span class="line"> </span><br><span class="line"> SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader]; </span><br><span class="line"> </span><br><span class="line"> downloder.shouldDecompressImages = SDImagedownloderOldShouldDecompressImages; </span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>SDWebImage本地缓存有时候会害人。如果之前缓存过一张图片，即使下次服务器换了这张图片，但是图片url没换，用SDWebimage下载下来的还是以前那张，所以遇到这种问题，不要先去怼服务器，清空下缓存再试就好了。</p>
+</li>
+<li><p>禁用button高亮</p>
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button.adjustsImageWhenHighlighted = NO;</span><br><span class="line">或者在创建的时候</span><br><span class="line">UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];</span><br></pre></td></tr></table></figure>
 <ul>
 <li>动画切换window的根控制器</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:.5f </span><br><span class="line">options:UIViewAnimationOptionTransitionCrossDissolve animations:^&#123;</span><br><span class="line">BOOL oldState = [UIView areAnimationsEnabled];</span><br><span class="line">[UIView setAnimationsEnabled:NO];</span><br><span class="line">[UIApplication sharedApplication].keyWindow.rootViewController = [[RootViewController alloc]init];</span><br><span class="line">[UIView setAnimationsEnabled:oldState];</span><br><span class="line">&#125; completion:^(BOOL finished) &#123;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:.5f </span><br><span class="line">options:UIViewAnimationOptionTransitionCrossDissolve animations:^&#123;</span><br><span class="line">        BOOL oldState = [UIView areAnimationsEnabled];</span><br><span class="line">        [UIView setAnimationsEnabled:NO];</span><br><span class="line">        [UIApplication sharedApplication].keyWindow.rootViewController = [[RootViewController alloc]init];</span><br><span class="line">        [UIView setAnimationsEnabled:oldState];</span><br><span class="line">    &#125; completion:^(BOOL finished) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
 <ul>
 <li>去除数组中重复的对象</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSArray *newArr = [oldArr valueForKeyPath:@&quot;@distinctUnionOfObjects.self&quot;];</span><br></pre></td></tr></table></figure>
 <ul>
-<li>编译的时候遇到 no such file or directory: /users/apple/XXX</li>
-<li><p>是因为编译的时候，在此路径下找不到这个文件，解决这个问题，首先是是要检查缺少的文件是不是在工程中，如果不在工程中，需要从本地拖进去，如果发现已经存在工程中了，或者拖进去还是报错，这时候需要去build phases中搜索这个文件，这时候很可能会搜出现两个相同的文件，这时候，有一个路径是正确的，删除另外一个即可。如果删除了还是不行，需要把两个都删掉，然后重新往工程里拖进这个文件即可</p>
+<li><p>编译的时候遇到 no such file or directory: /users/apple/XXX</p>
+<ul>
+<li>是因为编译的时候，在此路径下找不到这个文件，解决这个问题，首先是是要检查缺少的文件是不是在工程中，如果不在工程中，需要从本地拖进去，如果发现已经存在工程中了，或者拖进去还是报错，这时候需要去build phases中搜索这个文件，这时候很可能会搜出现两个相同的文件，这时候，有一个路径是正确的，删除另外一个即可。如果删除了还是不行，需要把两个都删掉，然后重新往工程里拖进这个文件即可</li>
+</ul>
 </li>
 <li><p>iOS8系统中，tableView最好实现下-tableView: heightForRowAtIndexPath:这个代理方法，要不然在iOS8中可能就会出现显示不全或者无法响应事件的问题</p>
 </li>
@@ -209,32 +213,34 @@
 <li>获取不到UICollectionView指定cell的问题</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[self.collectionView layoutIfNeeded];//添加这句话就好 </span><br><span class="line"></span><br><span class="line">QTMResContinueEditeCell *cell = (QTMResContinueEditeCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_index inSection:0]];</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 跳进app权限设置</span><br></pre></td></tr></table></figure>
-<p>// 跳进app设置<br>if (UIApplicationOpenSettingsURLString != NULL) {<br>UIApplication <em>application = [UIApplication sharedApplication];<br>NSURL </em>URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];<br>if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {<br>[application openURL:URL options:@{}<br>completionHandler:nil];<br>} else {<br>[application openURL:URL];<br>}<br>}</p>
+<p>// 跳进app设置<br>if (UIApplicationOpenSettingsURLString != NULL) {<br>    UIApplication <em>application = [UIApplication sharedApplication];<br>    NSURL </em>URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];<br>    if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {<br>        [application openURL:URL options:@{}<br>           completionHandler:nil];<br>    } else {<br>        [application openURL:URL];<br>    }<br>}</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 给一个view截图</span><br></pre></td></tr></table></figure>
 <ul>
-<li>(UIImage <em>)cutImageWithView:(UIView </em>)view<br>{<br>UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0);<br>[view.layer renderInContext:UIGraphicsGetCurrentContext()];<br>UIImage *image = UIGraphicsGetImageFromCurrentImageContext();<br>UIGraphicsEndImageContext();</li>
+<li><p>(UIImage <em>)cutImageWithView:(UIView </em>)view<br>{<br>  UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0);<br>  [view.layer renderInContext:UIGraphicsGetCurrentContext()];<br>  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();<br>  UIGraphicsEndImageContext();</p>
+<p>  return image;<br>}</p>
+</li>
 </ul>
-<p>return image;<br>}</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 注意对象为nil的时候，调用此对象分类的方法不会执行</span><br><span class="line"></span><br><span class="line">- collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动：</span><br></pre></td></tr></table></figure>
 <p>collectionView.alwaysBounceHorizontal = YES;</p>
 <p>collectionView.alwaysBounceVertical = YES;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 颜色转图片</span><br></pre></td></tr></table></figure>
 <ul>
-<li>(UIImage <em>)imageWithColor:(UIColor </em>)color {</li>
+<li><p>(UIImage <em>)imageWithColor:(UIColor </em>)color {</p>
+<p>  //描述一个矩形<br>  CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);<br>  //开启图形上下文<br>  UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);</p>
+<p>  //获得图形上下文<br>  CGContextRef ctx = UIGraphicsGetCurrentContext();</p>
+<p>  //使用color演示填充上下文<br>  CGContextSetFillColorWithColor(ctx, [color CGColor]);</p>
+<p>  //渲染上下文<br>  CGContextFillRect(ctx, rect);</p>
+<p>  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();</p>
+<p>  //关闭图形上下文<br>  UIGraphicsEndImageContext();</p>
+<p>  return image;</p>
+</li>
 </ul>
-<p>//描述一个矩形<br>CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);<br>//开启图形上下文<br>UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);</p>
-<p>//获得图形上下文<br>CGContextRef ctx = UIGraphicsGetCurrentContext();</p>
-<p>//使用color演示填充上下文<br>CGContextSetFillColorWithColor(ctx, [color CGColor]);</p>
-<p>//渲染上下文<br>CGContextFillRect(ctx, rect);</p>
-<p>UIImage *image = UIGraphicsGetImageFromCurrentImageContext();</p>
-<p>//关闭图形上下文<br>UIGraphicsEndImageContext();</p>
-<p>return image;</p>
 <p>}</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- view设置圆角</span><br></pre></td></tr></table></figure>
 <p>#define ViewBorderRadius(View, Radius, Width, Color)\<br>\<br>[View.layer setCornerRadius:(Radius)];\<br>[View.layer setMasksToBounds:YES];\<br>[View.layer setBorderWidth:(Width)];\<br>[View.layer setBorderColor:[Color CGColor]] // view圆角</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- view某个角度设置圆角</span><br></pre></td></tr></table></figure>
-<p>UIBezierPath <em>maskPath = [UIBezierPath bezierPathWithRoundedRect:self.whiteView.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(10, 10)];<br>CAShapeLayer </em>maskLayer = [[CAShapeLayer alloc] init];<br>maskLayer.frame = self.whiteView.bounds;<br>maskLayer.path = maskPath.CGPath;<br>self.whiteView.layer.mask = maskLayer;</p>
-<p>##指定了需要成为圆角的角该参数是UIRectCorner类型的，可选的值有：</p>
+<p>UIBezierPath <em>maskPath = [UIBezierPath bezierPathWithRoundedRect:self.whiteView.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(10, 10)];<br>    CAShapeLayer </em>maskLayer = [[CAShapeLayer alloc] init];<br>    maskLayer.frame = self.whiteView.bounds;<br>    maskLayer.path = maskPath.CGPath;<br>    self.whiteView.layer.mask = maskLayer;</p>
+<p>  ##指定了需要成为圆角的角该参数是UIRectCorner类型的，可选的值有：</p>
 <ul>
 <li>UIRectCornerTopLeft</li>
 <li>UIRectCornerTopRight</li>
@@ -294,25 +300,68 @@
 <p>// 随机色</p>
 <p>#define RandomCOLOR RGBCOLOR(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取window</span><br></pre></td></tr></table></figure>
-<p>+(UIWindow<em>)getWindow {<br>UIWindow</em> win = nil; //[UIApplication sharedApplication].keyWindow;<br>for (id item in [UIApplication sharedApplication].windows) {<br>if ([item class] == [UIWindow class]) {<br>if (!((UIWindow*)item).hidden) {<br>win = item;<br>break;<br>}<br>}<br>}<br>return win;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 修改textField的placeholder的字体颜色、大小</span><br></pre></td></tr></table></figure></p>
+<p>+(UIWindow<em>)getWindow {<br>    UIWindow</em> win = nil; //[UIApplication sharedApplication].keyWindow;<br>    for (id item in [UIApplication sharedApplication].windows) {<br>        if ([item class] == [UIWindow class]) {<br>            if (!((UIWindow*)item).hidden) {<br>                win = item;<br>                break;<br>            }<br>        }<br>    }<br>    return win;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 修改textField的placeholder的字体颜色、大小</span><br></pre></td></tr></table></figure></p>
 <p>[textField setValue:[UIColor redColor] forKeyPath:@”_placeholderLabel.textColor”];<br>[textField setValue:[UIFont boldSystemFontOfSize:16] forKeyPath:@”_placeholderLabel.font”];<br>// 或者<br>textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13],NSForegroundColorAttributeName : [UIColor grayColor]}];</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- APP缓存</span><br></pre></td></tr></table></figure>
 <p>/*<em> </em>  存 数组数据<em>/<br>+(void)setObectOfArray:(NSArray </em>)array fileName:(NSString *)fileName<br>{</p>
-<p>//缓存文件的 根路径<br>NSString <em>path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];<br>// 缓存 文件夹 路径<br>NSString </em>filePath = [path stringByAppendingPathComponent:@”XXX.dataCache”];</p>
-<p>NSFileManager *fileManager = [NSFileManager defaultManager];</p>
-<p>if ([fileManager fileExistsAtPath:filePath] == NO)<br>{<br>[fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];<br>}<br>//缓存文件的路径<br>NSString * cacheFilePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@”%@.plist”,fileName]];<br>BOOL isSuccess = [array writeToFile:cacheFilePath atomically:NO];<br>if (isSuccess) {<br>NSLog(@”缓存数据成功:---%@”,cacheFilePath);<br>}else<br>{<br>NSLog(@”缓存数据失败:---%@”,cacheFilePath);<br>}</p>
-<p>}</p>
+<pre><code>//缓存文件的 根路径
+NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+// 缓存 文件夹 路径
+NSString *filePath = [path stringByAppendingPathComponent:@&quot;XXX.dataCache&quot;];
+
+NSFileManager *fileManager = [NSFileManager defaultManager];
+
+if ([fileManager fileExistsAtPath:filePath] == NO)
+{
+    [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+}
+//缓存文件的路径
+NSString * cacheFilePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@&quot;%@.plist&quot;,fileName]];
+BOOL isSuccess = [array writeToFile:cacheFilePath atomically:NO];
+if (isSuccess) {
+    NSLog(@&quot;缓存数据成功:---%@&quot;,cacheFilePath);
+}else
+{
+    NSLog(@&quot;缓存数据失败:---%@&quot;,cacheFilePath);
+}
+</code></pre><p>}</p>
 <p>/<em>**  取 数组数据</em>/<br>+(NSArray <em>)cacheArrayForFileName:(NSString </em>)fileName<br>{</p>
-<p>//缓存文件的 根路径<br>NSString <em>path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];<br>// 缓存 文件夹 路径<br>NSString </em>filePath = [path stringByAppendingPathComponent:@”XXX.dataCache”];<br>//缓存文件的路径<br>NSString <em> cacheFilePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@”%@.plist”,fileName]];<br>//取得缓存文件<br>NSArray </em>array  = [NSArray arrayWithContentsOfFile:cacheFilePath];</p>
-<p>return array;<br>}</p>
-<p>/<em>** 清除 这个全部的缓存数据 </em>/<br>+(void)clearCacheListData:(void (^)())completion<br>{<br>// 异线程<br>dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{<br>// 清楚缓存<br>//缓存文件的 根路径<br>NSString <em>path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];<br>// 缓存 文件夹 路径<br>NSString </em>filePath = [path stringByAppendingPathComponent:@”FortuneDonkey.dataCache”];<br>NSFileManager *manager = [NSFileManager defaultManager];<br>//移除文件夹<br>[manager removeItemAtPath:filePath error:nil];<br>//  创建一个新的文件夹<br>[manager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];<br>if (completion)<br>{<br>//回调主线程<br>dispatch_async(dispatch_get_main_queue(), ^{<br>completion();<br>});<br>}<br>});<br>}</p>
-<p>/<em>** 清除SD缓存数据 </em>/<br>-(void)clearSDCacheData<br>{<br>//先清除内存中的图片缓存<br>[[SDImageCache sharedImageCache] clearMemory];<br>//清除磁盘的缓存<br>[[SDImageCache sharedImageCache] clearDisk];<br>}</p>
+<pre><code>//缓存文件的 根路径
+NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+// 缓存 文件夹 路径
+NSString *filePath = [path stringByAppendingPathComponent:@&quot;XXX.dataCache&quot;];
+//缓存文件的路径
+NSString * cacheFilePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@&quot;%@.plist&quot;,fileName]];
+//取得缓存文件
+NSArray *array  = [NSArray arrayWithContentsOfFile:cacheFilePath];
+
+return array;
+</code></pre><p>}</p>
+<p>/<em>** 清除 这个全部的缓存数据 </em>/<br>+(void)clearCacheListData:(void (^)())completion<br>{<br>    // 异线程<br>    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{<br>        // 清楚缓存<br>        //缓存文件的 根路径<br>        NSString <em>path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];<br>        // 缓存 文件夹 路径<br>        NSString </em>filePath = [path stringByAppendingPathComponent:@”FortuneDonkey.dataCache”];<br>        NSFileManager *manager = [NSFileManager defaultManager];<br>        //移除文件夹<br>        [manager removeItemAtPath:filePath error:nil];<br>        //  创建一个新的文件夹<br>        [manager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];<br>        if (completion)<br>        {<br>            //回调主线程<br>            dispatch_async(dispatch_get_main_queue(), ^{<br>                completion();<br>            });<br>        }<br>    });<br>}</p>
+<p>/<em>** 清除SD缓存数据 </em>/<br>-(void)clearSDCacheData<br>{<br>    //先清除内存中的图片缓存<br>    [[SDImageCache sharedImageCache] clearMemory];<br>    //清除磁盘的缓存<br>    [[SDImageCache sharedImageCache] clearDisk];<br>}</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取APP缓存大小</span><br></pre></td></tr></table></figure>
 <ul>
-<li>(CGFloat)getCachSize {</li>
+<li><p>(CGFloat)getCachSize {</p>
+<p>  NSUInteger imageCacheSize = [[SDImageCache sharedImageCache] getSize];<br>  //获取自定义缓存大小<br>  //用枚举器遍历 一个文件夹的内容<br>  //1.获取 文件夹枚举器<br>  NSString <em>myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@”Library/Caches”];<br>  NSDirectoryEnumerator </em>enumerator = [[NSFileManager defaultManager] enumeratorAtPath:myCachePath];<br>  __block NSUInteger count = 0;<br>  //2.遍历<br>  for (NSString *fileName in enumerator) {</p>
+<pre><code>NSString *path = [myCachePath stringByAppendingPathComponent:fileName];
+NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
+count += fileDict.fileSize;//自定义所有缓存大小
+</code></pre><p>  }<br>  // 得到是字节  转化为M<br>  CGFloat totalSize = ((CGFloat)imageCacheSize+count)/1024/1024;<br>  return totalSize;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 几个常用权限判断</span><br></pre></td></tr></table></figure>
+<p>  if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusDenied) {</p>
+<pre><code>NSLog(@&quot;没有定位权限&quot;);
+</code></pre><p>  }<br>  AVAuthorizationStatus statusVideo = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];<br>  if (statusVideo == AVAuthorizationStatusDenied) {</p>
+<pre><code>NSLog(@&quot;没有摄像头权限&quot;);
+</code></pre><p>  }<br>  //是否有麦克风权限<br>  AVAuthorizationStatus statusAudio = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];<br>  if (statusAudio == AVAuthorizationStatusDenied) {</p>
+<pre><code>NSLog(@&quot;没有录音权限&quot;);
+</code></pre><p>  }<br>  [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {</p>
+<pre><code>if (status == PHAuthorizationStatusDenied) {
+    NSLog(@&quot;没有相册权限&quot;);
+}
+</code></pre><p>  }];</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">- 系统相关的一些方法</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>NSUInteger imageCacheSize = [[SDImageCache sharedImageCache] getSize];<br>//获取自定义缓存大小<br>//用枚举器遍历 一个文件夹的内容<br>//1.获取 文件夹枚举器<br>NSString <em>myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@”Library/Caches”];<br>NSDirectoryEnumerator </em>enumerator = [[NSFileManager defaultManager] enumeratorAtPath:myCachePath];<br>__block NSUInteger count = 0;<br>//2.遍历<br>for (NSString <em>fileName in enumerator) {<br>NSString </em>path = [myCachePath stringByAppendingPathComponent:fileName];<br>NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];<br>count += fileDict.fileSize;//自定义所有缓存大小<br>}<br>// 得到是字节  转化为M<br>CGFloat totalSize = ((CGFloat)imageCacheSize+count)/1024/1024;<br>return totalSize;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 几个常用权限判断</span><br></pre></td></tr></table></figure></p>
-<p>if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusDenied) {<br>NSLog(@”没有定位权限”);<br>}<br>AVAuthorizationStatus statusVideo = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];<br>if (statusVideo == AVAuthorizationStatusDenied) {<br>NSLog(@”没有摄像头权限”);<br>}<br>//是否有麦克风权限<br>AVAuthorizationStatus statusAudio = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];<br>if (statusAudio == AVAuthorizationStatusDenied) {<br>NSLog(@”没有录音权限”);<br>}<br>[PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {<br>if (status == PHAuthorizationStatusDenied) {<br>NSLog(@”没有相册权限”);<br>}<br>}];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 系统相关的一些方法</span><br></pre></td></tr></table></figure></p>
 <p>//获取系统版本</p>
 <p>#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]</p>
 <p>#define IS_IOS10_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 10.0)</p>
@@ -327,10 +376,276 @@
 <p>#if TARGET_OS_IPHONE<br>//iPhone Device</p>
 <p>#endif</p>
 <p>#if TARGET_IPHONE_SIMULATOR<br>//iPhone Simulator</p>
-<p>#endif<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 长按复制功能</span><br></pre></td></tr></table></figure></p>
+<p>#endif<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">- 长按复制功能</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>(void)viewDidLoad<br>{<br>[self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pasteBoard:)]];<br>}</li>
-<li>(void)pasteBoard:(UILongPressGestureRecognizer <em>)longPress {<br>if (longPress.state == UIGestureRecognizerStateBegan) {<br>UIPasteboard </em>pasteboard = [UIPasteboard generalPasteboard];<br>pasteboard.string = @”我是文字”;<br>}<br>}</li>
+<li>(void)viewDidLoad<br>{<br>  [self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pasteBoard:)]];<br>}</li>
+<li>(void)pasteBoard:(UILongPressGestureRecognizer *)longPress {<br>  if (longPress.state == UIGestureRecognizerStateBegan) {<pre><code>UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+pasteboard.string = @&quot;我是文字&quot;;
+</code></pre>  }<br>}</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 判断图片类型</span><br></pre></td></tr></table></figure>
+<p>//通过图片 Data 数据第一个字节 来获取图片扩展名</p>
+<ul>
+<li><p>(NSString <em>)contentTypeForImageData:(NSData </em>)data<br>{<br>  uint8_t c;<br>  [data getBytes:&amp;c length:1];<br>  switch (c)<br>  {</p>
+<pre><code>case 0xFF:
+    return @&quot;jpeg&quot;;
+
+case 0x89:
+    return @&quot;png&quot;;
+
+case 0x47:
+    return @&quot;gif&quot;;
+
+case 0x49:
+case 0x4D:
+    return @&quot;tiff&quot;;
+
+case 0x52:
+if ([data length] &lt; 12) {
+    return nil;
+}
+
+NSString *testString = [[NSString alloc] initWithData:[data subdataWithRange:NSMakeRange(0, 12)] encoding:NSASCIIStringEncoding];
+if ([testString hasPrefix:@&quot;RIFF&quot;]
+    &amp;&amp; [testString hasSuffix:@&quot;WEBP&quot;])
+{
+    return @&quot;webp&quot;;
+}
+
+return nil;
+</code></pre><p>  }</p>
+<p>  return nil;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取手机和 APP 信息</span><br></pre></td></tr></table></figure>
+<p>//手机序列号<br>NSString* identifierNumber = [[UIDevice currentDevice] uniqueIdentifier];</p>
+</li>
+</ul>
+<p>//手机别名： 用户定义的名称<br>NSString* userPhoneName = [[UIDevice currentDevice] name];</p>
+<p>//设备名称<br>NSString* deviceName = [[UIDevice currentDevice] systemName];</p>
+<p>//手机系统版本<br>NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];</p>
+<p>//手机型号<br>NSString* phoneModel = [[UIDevice currentDevice] model];</p>
+<p>//地方型号  （国际化区域名称）<br>NSString* localPhoneModel = [[UIDevice currentDevice] localizedModel];</p>
+<p>NSDictionary <em>infoDictionary = [[NSBundle mainBundle] infoDictionary];<br>// 当前应用名称<br>NSString </em>appCurName = [infoDictionary objectForKey:@”CFBundleDisplayName”];</p>
+<p>// 当前应用版本<br>NSString *appCurVersion = [infoDictionary objectForKey:@”CFBundleShortVersionString”];</p>
+<p>// 当前应用版本号码   int类型<br>NSString *appCurVersionNum = [infoDictionary objectForKey:@”CFBundleVersion”];</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line"></span><br><span class="line">- UIImage绘制圆角</span><br></pre></td></tr></table></figure>
+<ul>
+<li>(UIImage <em>)circleImage<br>{<br>  // NO代表透明<br>  UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);<br>  // 获得上下文<br>  CGContextRef ctx = UIGraphicsGetCurrentContext();<br>  // 添加一个圆<br>  CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);<br>  // 方形变圆形<br>  CGContextAddEllipseInRect(ctx, rect);<br>  // 裁剪<br>  CGContextClip(ctx);<br>  // 将图片画上去<br>  [self drawInRect:rect];<br>  UIImage </em>image = UIGraphicsGetImageFromCurrentImageContext();<br>  UIGraphicsEndImageContext();<br>  return image;<br>}</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 准确获取图片像素</span><br></pre></td></tr></table></figure>
+<p>CGFloat fixelW = CGImageGetWidth(image.CGImage);<br>CGFloat fixelH = CGImageGetHeight(image.CGImage);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- JSON字符串转字典</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>(NSDictionary <em>)parseJSONStringToNSDictionary:(NSString </em>)JSONString {<br>  NSData <em>JSONData = [JSONString dataUsingEncoding:NSUTF8StringEncoding];<br>  NSDictionary </em>responseJSON = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableLeaves error:nil];<br>  return responseJSON;<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 获取当前控制器</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>//获取当前屏幕显示的viewcontroller</p>
+<ul>
+<li><p>(UIViewController <em>)getCurrentVC{<br>  UIWindow </em>window = [[UIApplication sharedApplication].windows firstObject];<br>  if (!window) {</p>
+<pre><code>return nil;
+</code></pre><p>  }<br>  UIView <em>tempView;<br>  for (UIView </em>subview in window.subviews) {</p>
+<pre><code>if ([[subview.classForCoder description] isEqualToString:@&quot;UILayoutContainerView&quot;]) {
+    tempView = subview;
+    break;
+}
+</code></pre><p>  }<br>  if (!tempView) {</p>
+<pre><code>tempView = [window.subviews lastObject];
+</code></pre><p>  }</p>
+<p>  id nextResponder = [tempView nextResponder];<br>  while (![nextResponder isKindOfClass:[UIViewController class]] || [nextResponder isKindOfClass:[UINavigationController class]] || [nextResponder isKindOfClass:[UITabBarController class]]) {</p>
+<pre><code>tempView =  [tempView.subviews firstObject];
+
+if (!tempView) {
+    return nil;
+}
+nextResponder = [tempView nextResponder];
+</code></pre><p>  }<br>  return  (UIViewController *)nextResponder;<br>}</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- KVO监听某个对象的属性</span><br></pre></td></tr></table></figure>
+<p>// 添加监听者<br>[self addObserver:self forKeyPath:property options:NSKeyValueObservingOptionNew context:nil];</p>
+<p>// 当监听的属性值变化的时候会来到这个方法</p>
+<ul>
+<li>(void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(NSDictionary </em>)change context:(void *)context {<br>  if ([keyPath isEqualToString:@”property”]) {<pre><code>[self textViewTextChange];
+} else {
+</code></pre>   }<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Reachability判断网络状态</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>NetworkStatus status = [[Reachability reachabilityForInternetConnection] currentReachabilityStatus];<br>    if (status == NotReachable) {<br>        NSLog(@”当前设备无网络”);<br>    }<br>    if (status == ReachableViaWiFi) {<br>        NSLog(@”当前wifi网络”);<br>    }<br>    if (status == ReachableViaWWAN) {<br>        NSLog(@”当前蜂窝移动网络”);<br>    }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- AFNetworking监听网络状态</span><br></pre></td></tr></table></figure>
+<p>// 监听网络状况<br>    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];<br>    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {<br>        switch (status) {<br>            case AFNetworkReachabilityStatusUnknown:<br>                break;<br>            case AFNetworkReachabilityStatusNotReachable: {<br>                NSLog(@”当前设备无网络”);<br>            }<br>                break;<br>            case AFNetworkReachabilityStatusReachableViaWiFi:<br>                 NSLog(@”当前wifi网络”);<br>                break;<br>            case AFNetworkReachabilityStatusReachableViaWWAN:<br>                NSLog(@”当前蜂窝移动网络”);<br>                break;<br>            default:<br>                break;<br>        }<br>    }];<br>   [mgr startMonitoring];</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">- 父视图透明不影响子视图的做法</span><br></pre></td></tr></table></figure>
+<p>self.view.backgroundColor = [[UIColor whiteColor]colorWithAlphaComponent:0.7f];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 取图片某一点的颜色</span><br></pre></td></tr></table></figure></p>
+<p>  if (point.x &lt; 0 || point.y &lt; 0) return nil;</p>
+<pre><code>CGImageRef imageRef = self.CGImage;
+NSUInteger width = CGImageGetWidth(imageRef);
+NSUInteger height = CGImageGetHeight(imageRef);
+if (point.x &gt;= width || point.y &gt;= height) return nil;
+
+unsigned char *rawData = malloc(height * width * 4);
+if (!rawData) return nil;
+
+CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+NSUInteger bytesPerPixel = 4;
+NSUInteger bytesPerRow = bytesPerPixel * width;
+NSUInteger bitsPerComponent = 8;
+CGContextRef context = CGBitmapContextCreate(rawData,
+                                             width,
+                                             height,
+                                             bitsPerComponent,
+                                             bytesPerRow,
+                                             colorSpace,
+                                             kCGImageAlphaPremultipliedLast
+                                             | kCGBitmapByteOrder32Big);
+if (!context) {
+    free(rawData);
+    return nil;
+}
+CGColorSpaceRelease(colorSpace);
+CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
+CGContextRelease(context);
+
+int byteIndex = (bytesPerRow * point.y) + point.x * bytesPerPixel;
+CGFloat red   = (rawData[byteIndex]     * 1.0) / 255.0;
+CGFloat green = (rawData[byteIndex + 1] * 1.0) / 255.0;
+CGFloat blue  = (rawData[byteIndex + 2] * 1.0) / 255.0;
+CGFloat alpha = (rawData[byteIndex + 3] * 1.0) / 255.0;
+
+UIColor *result = nil;
+result = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+free(rawData);
+return result;
+</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">- 判断该图片是否有透明度通道</span><br></pre></td></tr></table></figure>
+<ul>
+<li>(BOOL)hasAlphaChannel<br>{<br>CGImageAlphaInfo alpha = CGImageGetAlphaInfo(self.CGImage);<br>return (alpha == kCGImageAlphaFirst ||<pre><code>alpha == kCGImageAlphaLast ||
+alpha == kCGImageAlphaPremultipliedFirst ||
+alpha == kCGImageAlphaPremultipliedLast);
+</code></pre>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 两张图片合成</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>(UIImage<em>)mergeImage:(UIImage</em>)firstImage withImage:(UIImage<em>)secondImage {<br>  CGImageRef firstImageRef = firstImage.CGImage;<br>  CGFloat firstWidth = CGImageGetWidth(firstImageRef);<br>  CGFloat firstHeight = CGImageGetHeight(firstImageRef);<br>  CGImageRef secondImageRef = secondImage.CGImage;<br>  CGFloat secondWidth = CGImageGetWidth(secondImageRef);<br>  CGFloat secondHeight = CGImageGetHeight(secondImageRef);<br>  CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));<br>  UIGraphicsBeginImageContext(mergedSize);<br>  [firstImage drawInRect:CGRectMake(0, 0, firstWidth, firstHeight)];<br>  [secondImage drawInRect:CGRectMake(0, 0, secondWidth, secondHeight)];<br>  UIImage </em>image = UIGraphicsGetImageFromCurrentImageContext();<br>  UIGraphicsEndImageContext();<br>  return image;<br>}</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 制作水印</span><br></pre></td></tr></table></figure>
+<p>// 画水印</p>
+<ul>
+<li>(void) setImage:(UIImage <em>)image withWaterMark:(UIImage </em>)mark inRect:(CGRect)rect<br>{<br>  if ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 4.0)<br>  {<pre><code>UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
+</code></pre>  }<br>  //原图<br>  [image drawInRect:self.bounds];<br>  //水印图<br>  [mark drawInRect:rect];<br>  UIImage *newPic = UIGraphicsGetImageFromCurrentImageContext();<br>  UIGraphicsEndImageContext();<br>  self.image = newPic;<br>}</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 让label的文字内容显示在左上／右上／左下／右下／中心顶／中心底部</span><br></pre></td></tr></table></figure>
+<p>自定义UILabel<br>// 重写label的textRectForBounds方法</p>
+<ul>
+<li><p>(CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines {<br>  CGRect rect = [super textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];<br>  switch (self.textAlignmentType) {</p>
+<pre><code>case WZBTextAlignmentTypeLeftTop: {
+    rect.origin = bounds.origin;
+}
+    break;
+case WZBTextAlignmentTypeRightTop: {
+    rect.origin = CGPointMake(CGRectGetMaxX(bounds) - rect.size.width, bounds.origin.y);
+}
+    break;
+case WZBTextAlignmentTypeLeftBottom: {
+    rect.origin = CGPointMake(bounds.origin.x, CGRectGetMaxY(bounds) - rect.size.height);
+}
+    break;
+case WZBTextAlignmentTypeRightBottom: {
+    rect.origin = CGPointMake(CGRectGetMaxX(bounds) - rect.size.width, CGRectGetMaxY(bounds) - rect.size.height);
+}
+    break;
+case WZBTextAlignmentTypeTopCenter: {
+    rect.origin = CGPointMake((CGRectGetWidth(bounds) - CGRectGetWidth(rect)) / 2, CGRectGetMaxY(bounds) - rect.origin.y);
+}
+    break;
+case WZBTextAlignmentTypeBottomCenter: {
+    rect.origin = CGPointMake((CGRectGetWidth(bounds) - CGRectGetWidth(rect)) / 2, CGRectGetMaxY(bounds) - CGRectGetMaxY(bounds) - rect.size.height);
+}
+    break;
+case WZBTextAlignmentTypeLeft: {
+    rect.origin = CGPointMake(0, rect.origin.y);
+}
+    break;
+case WZBTextAlignmentTypeRight: {
+    rect.origin = CGPointMake(rect.origin.x, 0);
+}
+    break;
+case WZBTextAlignmentTypeCenter: {
+    rect.origin = CGPointMake((CGRectGetWidth(bounds) - CGRectGetWidth(rect)) / 2, (CGRectGetHeight(bounds) - CGRectGetHeight(rect)) / 2);
+}
+    break;
+
+default:
+    break;
+</code></pre><p>  }<br>  return rect;<br>}</p>
+</li>
+<li><p>(void)drawTextInRect:(CGRect)rect {<br>  CGRect textRect = [self textRectForBounds:rect limitedToNumberOfLines:self.numberOfLines];<br>  [super drawTextInRect:textRect];<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 移除字符串中的空格和换行</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>(NSString <em>)removeSpaceAndNewline:(NSString </em>)str {<br>  NSString *temp = [str stringByReplacingOccurrencesOfString:@” “ withString:@””];<br>  temp = [temp stringByReplacingOccurrencesOfString:@”\r” withString:@””];<br>  temp = [temp stringByReplacingOccurrencesOfString:@”\n” withString:@””];<br>  return temp;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 判断字符串中是否有空格</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>(BOOL)isBlank:(NSString *)str {<br>  NSRange _range = [str rangeOfString:@” “];<br>  if (_range.location != NSNotFound) {</p>
+<pre><code>//有空格
+return YES;
+</code></pre><p>  } else {</p>
+<pre><code>//没有空格
+return NO;
+</code></pre><p>  }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取一个视频的第一帧图片</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>NSURL <em>url = [NSURL URLWithString:filepath];<br>AVURLAsset </em>asset1 = [[AVURLAsset alloc] initWithURL:url options:nil];<br>AVAssetImageGenerator <em>generate1 = [[AVAssetImageGenerator alloc] initWithAsset:asset1];<br>generate1.appliesPreferredTrackTransform = YES;<br>NSError </em>err = NULL;<br>CMTime time = CMTimeMake(1, 2);<br>CGImageRef oneRef = [generate1 copyCGImageAtTime:time actualTime:NULL error:&amp;err];<br>UIImage *one = [[UIImage alloc] initWithCGImage:oneRef];<br> return one;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line">- 获取视频的时长</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>(NSInteger)getVideoTimeByUrlString:(NSString <em>)urlString {<br>  NSURL </em>videoUrl = [NSURL URLWithString:urlString];<br>  AVURLAsset *avUrl = [AVURLAsset assetWithURL:videoUrl];<br>  CMTime time = [avUrl duration];<br>  int seconds = ceil(time.value/time.timescale);<br>  return seconds;<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 当tableView占不满一屏时，去除下边多余的单元格</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>self.tableView.tableHeaderView = [UIView new];<br>self.tableView.tableFooterView = [UIView new];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- isKindOfClass和isMemberOfClass的区别</span><br></pre></td></tr></table></figure></p>
+<p>isKindOfClass可以判断某个对象是否属于某个类，或者这个类的子类。<br>isMemberOfClass更加精准，它只能判断这个对象类型是否为这个类(不能判断子类)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 禁用系统滑动返回功能</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>(void)viewDidAppear:(BOOL)animated<br>{<br>   [super viewDidAppear:animated];<br>   if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)])<br>   {self.navigationController.interactivePopGestureRecognizer.delegate = self;<br>  }<br>}</p>
+</li>
+<li><p>(void)viewWillDisappear:(BOOL)animated {<br>  [super viewWillDisappear:animated];<br>  if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)])<br>  {self.navigationController.interactivePopGestureRecognizer.delegate = nil;<br>  }<br>}</p>
+</li>
+<li>(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer<br>{<br>   return NO;<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- UILabel设置内边距</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>子类化UILabel，重写drawTextInRect方法</p>
+<ul>
+<li>(void)drawTextInRect:(CGRect)rect {<br>  // 边距，上左下右<br>  UIEdgeInsets insets = {0, 5, 0, 5};<br>  [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];<br>}</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- UILabel设置文字描边</span><br></pre></td></tr></table></figure>
+<p>子类化UILabel，重写drawTextInRect方法</p>
+<ul>
+<li>(void)drawTextInRect:(CGRect)rect<br>{<br>  CGContextRef c = UIGraphicsGetCurrentContext();<br>  // 设置描边宽度<br>  CGContextSetLineWidth(c, 1);<br>  CGContextSetLineJoin(c, kCGLineJoinRound);<br>  CGContextSetTextDrawingMode(c, kCGTextStroke);<br>  // 描边颜色<br>  self.textColor = [UIColor redColor];<br>  [super drawTextInRect:rect];<br>  // 文本颜色<br>  self.textColor = [UIColor yellowColor];<br>  CGContextSetTextDrawingMode(c, kCGTextFill);<br>  [super drawTextInRect:rect];<br>}</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- UIView背景颜色渐变</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>(CAGradientLayer <em>)setGradualChangingColor:(UIView </em>)view fromColor:(NSString <em>)fromHexColorStr toColor:(NSString </em>)toHexColorStr{<br>  //    CAGradientLayer类对其绘制渐变背景颜色、填充层的形状(包括圆角)<br>  CAGradientLayer *gradientLayer = [CAGradientLayer layer];<br>  gradientLayer.frame = view.bounds;<br>  //  创建渐变色数组，需要转换为CGColor颜色<br>  gradientLayer.colors = @[(<strong>bridge id)[UIColor colorWithHexString:fromHexColorStr].CGColor,(</strong>bridge id)[UIColor colorWithHexString:toHexColorStr].CGColor];<br>  //  设置渐变颜色方向，左下点为(0,0), 右上点为(1,1)<br>  gradientLayer.startPoint = CGPointMake(0, 0.5);<br>  gradientLayer.endPoint = CGPointMake(1, 0.5);<br>  //  设置颜色变化点，取值范围 0.0~1.0<br>  gradientLayer.locations = @[@0,@1];</p>
+<p>  return gradientLayer;<br>}</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- UIView某个角添加圆角</span><br></pre></td></tr></table></figure>
+<p>// 左上角和右下角添加圆角<br>UIBezierPath <em>maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(20, 20)];<br>CAShapeLayer </em>maskLayer = [CAShapeLayer layer];<br>maskLayer.frame = view.bounds;<br>maskLayer.path = maskPath.CGPath;<br>view.layer.mask = maskLayer;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- UIImage和base64互转</span><br></pre></td></tr></table></figure></p>
+<p>// view分类方法</p>
+<ul>
+<li><p>(NSString <em>)encodeToBase64String:(UIImage </em>)image {<br>return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];<br>}</p>
+</li>
+<li><p>(UIImage <em>)decodeBase64ToImage:(NSString </em>)strEncodeData {<br>NSData *data = [[NSData alloc]initWithBase64EncodedString:strEncodeData options:NSDataBase64DecodingIgnoreUnknownCharacters];<br>return [UIImage imageWithData:data];<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- UIWebView设置背景透明</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>[webView setBackgroundColor:[UIColor clearColor]];<br>[webView setOpaque:NO];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 设置tableView分割线颜色以及顶到头</span><br></pre></td></tr></table></figure></p>
+<p>// 分割线颜色<br>[self.tableView setSeparatorColor:[UIColor myColor]];</p>
+<p>// 顶到头</p>
+<ul>
+<li><p>(void)tableView:(UITableView <em>)tableView willDisplayCell:(UITableViewCell </em>)cell forRowAtIndexPath:(NSIndexPath *)indexPath {<br>  [cell setSeparatorInset:UIEdgeInsetsZero];<br>  [cell setLayoutMargins:UIEdgeInsetsZero];<br>  cell.preservesSuperviewLayoutMargins = NO;<br>}</p>
+</li>
+<li><p>(void)viewDidLayoutSubviews {<br>  [self.tableView setSeparatorInset:UIEdgeInsetsZero];<br>  [self.tableView setLayoutMargins:UIEdgeInsetsZero];<br>}</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 为一个view添加虚线边框</span><br></pre></td></tr></table></figure>
+<p>CAShapeLayer *border = [CAShapeLayer layer];<br> border.strokeColor = [UIColor colorWithRed:67/255.0f green:37/255.0f blue:83/255.0f alpha:1].CGColor;<br> border.fillColor = nil;<br> border.lineDashPattern = @[@4, @2];<br> border.path = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;<br> border.frame = view.bounds;<br> [view.layer addSublayer:border];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">- UITextView中打开或禁用复制，剪切，选择，全选等功能</span><br></pre></td></tr></table></figure></p>
+<p>// 继承UITextView重写这个方法</p>
+<ul>
+<li>(BOOL)canPerformAction:(SEL)action withSender:(id)sender<br>{<br>// 返回NO为禁用，YES为开启<br>  // 粘贴<br>  if (action == @selector(paste:)) return NO;<br>  // 剪切<br>  if (action == @selector(cut:)) return NO;<br>  // 复制<br>  if (action == @selector(copy:)) return NO;<br>  // 选择<br>  if (action == @selector(select:)) return NO;<br>  // 选中全部<br>  if (action == @selector(selectAll:)) return NO;<br>  // 删除<br>  if (action == @selector(delete:)) return NO;<br>  // 分享<br>  if (action == @selector(share)) return NO;<br>  return [super canPerformAction:action withSender:sender];<br>}</li>
 </ul>
 <p><code>`</code></p>
 
